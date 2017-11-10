@@ -25,7 +25,7 @@ public class PageController {
 	@RequestMapping(value = { "/", "/home", "/index" })
 	public ModelAndView index(
 			@RequestParam(name = "logout", required = false) String logout) {
-		ModelAndView mv = new ModelAndView("page");
+		ModelAndView mv = new ModelAndView("homePage");
 		mv.addObject("title", "Home");
 
 		logger.info("Inside PageController index method - INFO");

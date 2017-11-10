@@ -10,7 +10,7 @@
 	style="background: #d7d9da !important;">
 <head>
 <meta charset="utf-8">
-<title>SmartAdmin</title>
+<title>Compliance Dashboard</title>
 <meta name="description" content="">
 <meta name="author" content="">
 <meta name="viewport"
@@ -132,9 +132,21 @@
 
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
+					<c:if test="${not empty message}">
+						<div class="alert alert-danger fade in">
+							<button class="close" data-dismiss="alert">×</button>
+							${message}
+						</div>
+					</c:if>
+					<c:if test="${not empty logout}">
+						<div class="alert alert-success fade in">
+							<button class="close" data-dismiss="alert">×</button>
+							${logout}
+						</div>
+					</c:if>
 					<div class="well no-padding"
 						style="box-shadow: 5px 5px 5px #343a40;">
-						<form action="index.html" id="login-form"
+						<form action="${contextPath}/login" method="POST" id="login-form"
 							class="smart-form client-form">
 							<header style="background: rgb(125, 126, 128); color: #fff;">
 								Sign In </header>
@@ -149,7 +161,8 @@
 								<section>
 									<label class="label">E-mail</label> <label class="input">
 										<i class="icon-append fa fa-user"></i> <input type="email"
-										name="email"> <b class="tooltip tooltip-top-right"><i
+										id="username" name="username"> <b
+										class="tooltip tooltip-top-right"><i
 											class="fa fa-user txt-color-teal"></i> Please enter email
 											address/username</b>
 									</label>
@@ -158,7 +171,8 @@
 								<section>
 									<label class="label">Password</label> <label class="input">
 										<i class="icon-append fa fa-lock"></i> <input type="password"
-										name="password"> <b class="tooltip tooltip-top-right"><i
+										id="password" name="password"> <b
+										class="tooltip tooltip-top-right"><i
 											class="fa fa-lock txt-color-teal"></i> Enter your password</b>
 									</label>
 
@@ -170,9 +184,10 @@
 							</fieldset>
 							<footer>
 								<button type="submit" class="btn btn-primary">Sign in</button>
+								<input type="hidden" name="${_csrf.parameterName}"
+									value="${_csrf.token}" />
 							</footer>
 						</form>
-
 					</div>
 
 				</div>
@@ -247,7 +262,7 @@
 			$("#login-form").validate({
 				// Rules for form validation
 				rules : {
-					email : {
+					username : {
 						required : true,
 						email : true
 					},
@@ -260,7 +275,7 @@
 
 				// Messages for form validation
 				messages : {
-					email : {
+					username : {
 						required : 'Please enter your email address',
 						email : 'Please enter a VALID email address'
 					},
