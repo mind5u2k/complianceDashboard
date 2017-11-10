@@ -139,7 +139,8 @@
 						</div>
 					</c:if>
 					<c:if test="${not empty logout}">
-						<div class="alert alert-success fade in">
+						<div class="alert alert-success fade in"
+							style="background-color: #a2da87; color: #143514;">
 							<button class="close" data-dismiss="alert">×</button>
 							${logout}
 						</div>

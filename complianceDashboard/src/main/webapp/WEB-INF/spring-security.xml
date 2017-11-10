@@ -31,14 +31,20 @@
 		email = ?" users-by-username-query="select email, password, enabled from 
 		user_detail where email = ?" /> </authentication-provider> </authentication-manager> -->
 
-	<beans:bean id="userDetailsService"
-		class="net.gh.complianceDashboard.UserDetailServices.UserDetailServiceImpl" />
+	<!-- <beans:bean id="userDetailsService" class="net.gh.complianceDashboard.UserDetailServices.UserDetailServiceImpl" 
+		/> -->
+
+
+	<beans:bean id="customAuthenticationProvider"
+		class="net.gh.complianceDashboard.UserDetailServices.CustomAuthenticationProvider" />
 
 	<authentication-manager>
-		<authentication-provider user-service-ref="userDetailsService">
-			<password-encoder ref="passwordEncoder">
-			</password-encoder>
+		<authentication-provider>
+			<user-service>
+				<user name="username" password="password" authorities="Admin" />
+			</user-service>
 		</authentication-provider>
+		<authentication-provider ref="customAuthenticationProvider"></authentication-provider>
 	</authentication-manager>
 
 

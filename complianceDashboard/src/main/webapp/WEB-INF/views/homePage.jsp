@@ -9,7 +9,6 @@
 <html lang="en-us">
 <head>
 <meta charset="utf-8">
-<!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
 
 <title>SmartAdmin</title>
 <meta name="description" content="">
@@ -37,10 +36,6 @@
 <!-- SmartAdmin RTL Support  -->
 <link rel="stylesheet" type="text/css" media="screen"
 	href="${contextPath}/resources/css/smartadmin-rtl.min.css">
-
-<!-- We recommend you use "your_style.css" to override SmartAdmin
-		     specific styles this will also ensure you retrain your customization with each SmartAdmin update.
-		<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
 
 <!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
 <link rel="stylesheet" type="text/css" media="screen"
@@ -85,137 +80,25 @@
 
 </head>
 
-<!--
 
-	TABLE OF CONTENTS.
-	
-	Use search to find needed section.
-	
-	===================================================================
-	
-	|  01. #CSS Links                |  all CSS links and file paths  |
-	|  02. #FAVICONS                 |  Favicon links and file paths  |
-	|  03. #GOOGLE FONT              |  Google font link              |
-	|  04. #APP SCREEN / ICONS       |  app icons, screen backdrops   |
-	|  05. #BODY                     |  body tag                      |
-	|  06. #HEADER                   |  header tag                    |
-	|  07. #PROJECTS                 |  project lists                 |
-	|  08. #TOGGLE LAYOUT BUTTONS    |  layout buttons and actions    |
-	|  09. #MOBILE                   |  mobile view dropdown          |
-	|  10. #SEARCH                   |  search field                  |
-	|  11. #NAVIGATION               |  left panel & navigation       |
-	|  12. #RIGHT PANEL              |  right panel userlist          |
-	|  13. #MAIN PANEL               |  main panel                    |
-	|  14. #MAIN CONTENT             |  content holder                |
-	|  15. #PAGE FOOTER              |  page footer                   |
-	|  16. #SHORTCUT AREA            |  dropdown shortcuts area       |
-	|  17. #PLUGINS                  |  all scripts and plugins       |
-	
-	===================================================================
-	
-	-->
 
-<!-- #BODY -->
-<!-- Possible Classes
-
-		* 'smart-style-{SKIN#}'
-		* 'smart-rtl'         - Switch theme mode to RTL
-		* 'menu-on-top'       - Switch to top navigation (no DOM change required)
-		* 'no-menu'			  - Hides the menu completely
-		* 'hidden-menu'       - Hides the main menu but still accessable by hovering over left edge
-		* 'fixed-header'      - Fixes the header
-		* 'fixed-navigation'  - Fixes the main menu
-		* 'fixed-ribbon'      - Fixes breadcrumb
-		* 'fixed-page-footer' - Fixes footer
-		* 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
-	-->
-<body class="">
+<body class="fixed-header fixed-navigation">
 
 	<!-- HEADER -->
-	<header id="header">
+	<header id="header" style="background: #313131 !important;">
 		<div id="logo-group">
-
 			<!-- PLACE YOUR LOGO HERE -->
-			<span id="logo"> <img
-				src="${contextPath}/resources/img/logo.png" alt="SmartAdmin">
+			<span id="logo"> <img style="width: 64px;"
+				src="${contextPath}/resources/img/ibmlogo.png" alt="SmartAdmin">
 			</span>
-			<!-- END LOGO PLACEHOLDER -->
-
-			<!-- Note: The activity badge color changes when clicked and resets the number to 0
-				Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
-			<span id="activity" class="activity-dropdown"> <i
-				class="fa fa-user"></i> <b class="badge"> 21 </b>
-			</span>
-
-			<!-- AJAX-DROPDOWN : control this dropdown height, look and feel from the LESS variable file -->
-			<div class="ajax-dropdown">
-
-				<!-- the ID links are fetched via AJAX to the ajax container "ajax-notifications" -->
-				<div class="btn-group btn-group-justified" data-toggle="buttons">
-					<label class="btn btn-default"> <input type="radio"
-						name="activity" id="ajax/notify/mail.html"> Msgs (14)
-					</label> <label class="btn btn-default"> <input type="radio"
-						name="activity" id="ajax/notify/notifications.html">
-						notify (3)
-					</label> <label class="btn btn-default"> <input type="radio"
-						name="activity" id="ajax/notify/tasks.html"> Tasks (4)
-					</label>
-				</div>
-
-				<!-- notification content -->
-				<div class="ajax-notifications custom-scroll">
-
-					<div class="alert alert-transparent">
-						<h4>Click a button to show messages here</h4>
-						This blank page message helps protect your privacy, or you can
-						show the first message here automatically.
-					</div>
-
-					<i class="fa fa-lock fa-4x fa-border"></i>
-
-				</div>
-				<!-- end notification content -->
-
-				<!-- footer: refresh area -->
-				<span> Last updated on: 12/12/2013 9:43AM
-					<button type="button"
-						data-loading-text="<i class='fa fa-refresh fa-spin'></i> Loading..."
-						class="btn btn-xs btn-default pull-right">
-						<i class="fa fa-refresh"></i>
-					</button>
-				</span>
-				<!-- end footer -->
-
+		</div>
+		<div class="hidden-xs" style="border-left: 1px solid #000;">
+			<div style="border-left: 2px solid #4e4d4d; height: 100%;">
+				<span id="logo" style="color: #fff; font-size: 16px;">
+					Compliance Dashboard </span>
 			</div>
-			<!-- END AJAX-DROPDOWN -->
 		</div>
 
-		<!-- projects dropdown -->
-		<div class="project-context hidden-xs">
-
-			<span class="label">Projects:</span> <span
-				class="project-selector dropdown-toggle" data-toggle="dropdown">Recent
-				projects <i class="fa fa-angle-down"></i>
-			</span>
-
-			<!-- Suggestion: populate this list with fetch and push technique -->
-			<ul class="dropdown-menu">
-				<li><a href="javascript:void(0);">Online e-merchant
-						management system - attaching integration with the iOS</a></li>
-				<li><a href="javascript:void(0);">Notes on pipeline
-						upgradee</a></li>
-				<li><a href="javascript:void(0);">Assesment Report for
-						merchant account</a></li>
-				<li class="divider"></li>
-				<li><a href="javascript:void(0);"><i
-						class="fa fa-power-off"></i> Clear</a></li>
-			</ul>
-			<!-- end dropdown-menu-->
-
-		</div>
-		<!-- end projects dropdown -->
-
-		<!-- pulled right: nav area -->
 		<div class="pull-right">
 
 			<!-- collapse menu button -->
@@ -233,7 +116,7 @@
 				<li class=""><a href="#"
 					class="dropdown-toggle no-margin userdropdown"
 					data-toggle="dropdown"> <img src="img/avatars/sunny.png"
-						alt="John Doe" class="online" />
+						alt="${userModel.fullName}" class="online" />
 				</a>
 					<ul class="dropdown-menu pull-right">
 						<li><a href="javascript:void(0);"
@@ -278,18 +161,6 @@
 						class="fa fa-search"></i></a>
 				</span>
 			</div>
-			<!-- end search mobile button -->
-
-			<!-- input: search field -->
-			<form action="search.html" class="header-search pull-right">
-				<input id="search-fld" type="text" name="param"
-					placeholder="Find reports and more">
-				<button type="submit">
-					<i class="fa fa-search"></i>
-				</button>
-				<a href="javascript:void(0);" id="cancel-search-js"
-					title="Cancel Search"><i class="fa fa-times"></i></a>
-			</form>
 			<!-- end input: search field -->
 
 			<!-- fullscreen button -->
@@ -299,41 +170,18 @@
 						class="fa fa-arrows-alt"></i></a>
 				</span>
 			</div>
-			<!-- end fullscreen button -->
-
-			<!-- #Voice Command: Start Speech -->
-
-			<!-- end voice command -->
-
-
-			<!-- end multiple lang -->
-
 		</div>
-		<!-- end pulled right: nav area -->
-
 	</header>
-	<!-- END HEADER -->
-
-	<!-- Left panel : Navigation area -->
-	<!-- Note: This width of the aside area can be adjusted through LESS variables -->
-	<aside id="left-panel">
-
-		<!-- User info -->
+	<aside id="left-panel" style="background: #464545 !important;">
 		<div class="login-info">
-			<span> <!-- User image size is adjusted inside CSS, it should stay as it -->
-
-				<a href="javascript:void(0);" id="show-shortcut"
+			<span> <a href="javascript:void(0);" id="show-shortcut"
 				data-action="toggleShortcut"> <img
 					src="${contextPath}/resources/img/avatars/sunny.png" alt="me"
-					class="online" /> <span> john.doe </span> <i
+					class="online" /> <span> ${userModel.fullName} </span> <i
 					class="fa fa-angle-down"></i>
 			</a>
-
 			</span>
 		</div>
-		<!-- end user info -->
-
-		<!-- NAVIGATION : This navigation is also responsive-->
 		<nav>
 			<ul>
 				<li class="active"><a href="index.html" title="Dashboard"><i
@@ -619,14 +467,9 @@
 	<div id="main" role="main">
 
 		<!-- RIBBON -->
-		<div id="ribbon">
+		<div id="ribbon" style="background: #777474 !important;">
 
-			<span class="ribbon-button-alignment"> <span id="refresh"
-				class="btn btn-ribbon" data-action="resetWidgets"
-				data-title="refresh" rel="tooltip" data-placement="bottom"
-				data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings."
-				data-html="true"> <i class="fa fa-refresh"></i>
-			</span>
+
 			</span>
 
 			<!-- breadcrumb -->
@@ -972,7 +815,642 @@
 				<!-- end row -->
 
 			</section>
+			<section id="widget-grid" class="">
+
+				<!-- row -->
+				<div class="row">
+					<article class="col-sm-12">
+						<!-- new widget -->
+						<div class="jarviswidget" id="wid-id-0"
+							data-widget-togglebutton="false" data-widget-editbutton="false"
+							data-widget-fullscreenbutton="false"
+							data-widget-colorbutton="false" data-widget-deletebutton="false">
+							<!-- widget options:
+								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+								data-widget-colorbutton="false"
+								data-widget-editbutton="false"
+								data-widget-togglebutton="false"
+								data-widget-deletebutton="false"
+								data-widget-fullscreenbutton="false"
+								data-widget-custombutton="false"
+								data-widget-collapsed="true"
+								data-widget-sortable="false"
+
+								-->
+							<header>
+								<span class="widget-icon"> <i
+									class="glyphicon glyphicon-stats txt-color-darken"></i>
+								</span>
+								<h2>Live Feeds</h2>
+
+								<ul class="nav nav-tabs pull-right in" id="myTab">
+									<li class="active"><a data-toggle="tab" href="#s1"><i
+											class="fa fa-clock-o"></i> <span
+											class="hidden-mobile hidden-tablet">Live Stats</span></a></li>
+
+									<li><a data-toggle="tab" href="#s2"><i
+											class="fa fa-facebook"></i> <span
+											class="hidden-mobile hidden-tablet">Social Network</span></a></li>
+
+									<li><a data-toggle="tab" href="#s3"><i
+											class="fa fa-dollar"></i> <span
+											class="hidden-mobile hidden-tablet">Revenue</span></a></li>
+								</ul>
+
+							</header>
+
+							<!-- widget div-->
+							<div class="no-padding">
+								<!-- widget edit box -->
+								<div class="jarviswidget-editbox">test</div>
+								<!-- end widget edit box -->
+
+								<div class="widget-body">
+									<!-- content -->
+									<div id="myTabContent" class="tab-content">
+										<div
+											class="tab-pane fade active in padding-10 no-padding-bottom"
+											id="s1">
+											<div class="row no-space">
+												<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+													<span class="demo-liveupdate-1"> <span
+														class="onoffswitch-title">Live switch</span> <span
+														class="onoffswitch"> <input type="checkbox"
+															name="start_interval" class="onoffswitch-checkbox"
+															id="start_interval"> <label
+															class="onoffswitch-label" for="start_interval"> <span
+																class="onoffswitch-inner" data-swchon-text="ON"
+																data-swchoff-text="OFF"></span> <span
+																class="onoffswitch-switch"></span>
+														</label>
+													</span>
+													</span>
+													<div id="updating-chart" class="chart-large txt-color-blue"></div>
+
+												</div>
+												<div
+													class="col-xs-12 col-sm-12 col-md-4 col-lg-4 show-stats">
+
+													<div class="row">
+														<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
+															<span class="text"> My Tasks <span
+																class="pull-right">130/200</span>
+															</span>
+															<div class="progress">
+																<div class="progress-bar bg-color-blueDark"
+																	style="width: 65%;"></div>
+															</div>
+														</div>
+														<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
+															<span class="text"> Transfered <span
+																class="pull-right">440 GB</span>
+															</span>
+															<div class="progress">
+																<div class="progress-bar bg-color-blue"
+																	style="width: 34%;"></div>
+															</div>
+														</div>
+														<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
+															<span class="text"> Bugs Squashed<span
+																class="pull-right">77%</span>
+															</span>
+															<div class="progress">
+																<div class="progress-bar bg-color-blue"
+																	style="width: 77%;"></div>
+															</div>
+														</div>
+														<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
+															<span class="text"> User Testing <span
+																class="pull-right">7 Days</span>
+															</span>
+															<div class="progress">
+																<div class="progress-bar bg-color-greenLight"
+																	style="width: 84%;"></div>
+															</div>
+														</div>
+
+														<span class="show-stat-buttons"> <span
+															class="col-xs-12 col-sm-6 col-md-6 col-lg-6"> <a
+																href="javascript:void(0);"
+																class="btn btn-default btn-block hidden-xs">Generate
+																	PDF</a>
+														</span> <span class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+																<a href="javascript:void(0);"
+																class="btn btn-default btn-block hidden-xs">Report a
+																	bug</a>
+														</span>
+														</span>
+
+													</div>
+
+												</div>
+											</div>
+
+											<div class="show-stat-microcharts">
+												<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+
+													<div class="easy-pie-chart txt-color-orangeDark"
+														data-percent="33" data-pie-size="50">
+														<span class="percent percent-sign">35</span>
+													</div>
+													<span class="easy-pie-title"> Server Load <i
+														class="fa fa-caret-up icon-color-bad"></i>
+													</span>
+													<ul class="smaller-stat hidden-sm pull-right">
+														<li><span class="label bg-color-greenLight"><i
+																class="fa fa-caret-up"></i> 97%</span></li>
+														<li><span class="label bg-color-blueLight"><i
+																class="fa fa-caret-down"></i> 44%</span></li>
+													</ul>
+													<div
+														class="sparkline txt-color-greenLight hidden-sm hidden-md pull-right"
+														data-sparkline-type="line" data-sparkline-height="33px"
+														data-sparkline-width="70px" data-fill-color="transparent">
+														130, 187, 250, 257, 200, 210, 300, 270, 363, 247, 270,
+														363, 247</div>
+												</div>
+												<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+													<div class="easy-pie-chart txt-color-greenLight"
+														data-percent="78.9" data-pie-size="50">
+														<span class="percent percent-sign">78.9 </span>
+													</div>
+													<span class="easy-pie-title"> Disk Space <i
+														class="fa fa-caret-down icon-color-good"></i></span>
+													<ul class="smaller-stat hidden-sm pull-right">
+														<li><span class="label bg-color-blueDark"><i
+																class="fa fa-caret-up"></i> 76%</span></li>
+														<li><span class="label bg-color-blue"><i
+																class="fa fa-caret-down"></i> 3%</span></li>
+													</ul>
+													<div
+														class="sparkline txt-color-blue hidden-sm hidden-md pull-right"
+														data-sparkline-type="line" data-sparkline-height="33px"
+														data-sparkline-width="70px" data-fill-color="transparent">
+														257, 200, 210, 300, 270, 363, 130, 187, 250, 247, 270,
+														363, 247</div>
+												</div>
+												<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+													<div class="easy-pie-chart txt-color-blue"
+														data-percent="23" data-pie-size="50">
+														<span class="percent percent-sign">23 </span>
+													</div>
+													<span class="easy-pie-title"> Transfered <i
+														class="fa fa-caret-up icon-color-good"></i></span>
+													<ul class="smaller-stat hidden-sm pull-right">
+														<li><span class="label bg-color-darken">10GB</span></li>
+														<li><span class="label bg-color-blueDark"><i
+																class="fa fa-caret-up"></i> 10%</span></li>
+													</ul>
+													<div
+														class="sparkline txt-color-darken hidden-sm hidden-md pull-right"
+														data-sparkline-type="line" data-sparkline-height="33px"
+														data-sparkline-width="70px" data-fill-color="transparent">
+														200, 210, 363, 247, 300, 270, 130, 187, 250, 257, 363,
+														247, 270</div>
+												</div>
+												<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+													<div class="easy-pie-chart txt-color-darken"
+														data-percent="36" data-pie-size="50">
+														<span class="percent degree-sign">36 <i
+															class="fa fa-caret-up"></i></span>
+													</div>
+													<span class="easy-pie-title"> Temperature <i
+														class="fa fa-caret-down icon-color-good"></i></span>
+													<ul class="smaller-stat hidden-sm pull-right">
+														<li><span class="label bg-color-red"><i
+																class="fa fa-caret-up"></i> 124</span></li>
+														<li><span class="label bg-color-blue"><i
+																class="fa fa-caret-down"></i> 40 F</span></li>
+													</ul>
+													<div
+														class="sparkline txt-color-red hidden-sm hidden-md pull-right"
+														data-sparkline-type="line" data-sparkline-height="33px"
+														data-sparkline-width="70px" data-fill-color="transparent">
+														2700, 3631, 2471, 2700, 3631, 2471, 1300, 1877, 2500,
+														2577, 2000, 2100, 3000</div>
+												</div>
+											</div>
+
+										</div>
+										<!-- end s1 tab pane -->
+
+										<div class="tab-pane fade" id="s2">
+											<div class="widget-body-toolbar bg-color-white">
+
+												<form class="form-inline" role="form">
+
+													<div class="form-group">
+														<label class="sr-only" for="s123">Show From</label> <input
+															type="email" class="form-control input-sm" id="s123"
+															placeholder="Show From">
+													</div>
+													<div class="form-group">
+														<input type="email" class="form-control input-sm"
+															id="s124" placeholder="To">
+													</div>
+
+													<div class="btn-group hidden-phone pull-right">
+														<a class="btn dropdown-toggle btn-xs btn-default"
+															data-toggle="dropdown"><i class="fa fa-cog"></i> More
+															<span class="caret"> </span> </a>
+														<ul class="dropdown-menu pull-right">
+															<li><a href="javascript:void(0);"><i
+																	class="fa fa-file-text-alt"></i> Export to PDF</a></li>
+															<li><a href="javascript:void(0);"><i
+																	class="fa fa-question-sign"></i> Help</a></li>
+														</ul>
+													</div>
+
+												</form>
+
+											</div>
+											<div class="padding-10">
+												<div id="statsChart" class="chart-large has-legend-unique"></div>
+											</div>
+
+										</div>
+										<!-- end s2 tab pane -->
+
+										<div class="tab-pane fade" id="s3">
+
+											<div class="widget-body-toolbar bg-color-white smart-form"
+												id="rev-toggles">
+
+												<div class="inline-group">
+
+													<label for="gra-0" class="checkbox"> <input
+														type="checkbox" name="gra-0" id="gra-0" checked="checked">
+														<i></i> Target
+													</label> <label for="gra-1" class="checkbox"> <input
+														type="checkbox" name="gra-1" id="gra-1" checked="checked">
+														<i></i> Actual
+													</label> <label for="gra-2" class="checkbox"> <input
+														type="checkbox" name="gra-2" id="gra-2" checked="checked">
+														<i></i> Signups
+													</label>
+												</div>
+
+												<div class="btn-group hidden-phone pull-right">
+													<a class="btn dropdown-toggle btn-xs btn-default"
+														data-toggle="dropdown"><i class="fa fa-cog"></i> More
+														<span class="caret"> </span> </a>
+													<ul class="dropdown-menu pull-right">
+														<li><a href="javascript:void(0);"><i
+																class="fa fa-file-text-alt"></i> Export to PDF</a></li>
+														<li><a href="javascript:void(0);"><i
+																class="fa fa-question-sign"></i> Help</a></li>
+													</ul>
+												</div>
+
+											</div>
+
+											<div class="padding-10">
+												<div id="flotcontainer"
+													class="chart-large has-legend-unique"></div>
+											</div>
+										</div>
+										<!-- end s3 tab pane -->
+									</div>
+
+									<!-- end content -->
+								</div>
+
+							</div>
+							<!-- end widget div -->
+						</div>
+						<!-- end widget -->
+
+					</article>
+				</div>
+
+				<!-- end row -->
+
+				<!-- row -->
+
+
+				<!-- end row -->
+
+			</section>
+			<section id="widget-grid" class="">
+
+				<!-- row -->
+				<div class="row">
+					<article class="col-sm-12">
+						<!-- new widget -->
+						<div class="jarviswidget" id="wid-id-0"
+							data-widget-togglebutton="false" data-widget-editbutton="false"
+							data-widget-fullscreenbutton="false"
+							data-widget-colorbutton="false" data-widget-deletebutton="false">
+							<!-- widget options:
+								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+								data-widget-colorbutton="false"
+								data-widget-editbutton="false"
+								data-widget-togglebutton="false"
+								data-widget-deletebutton="false"
+								data-widget-fullscreenbutton="false"
+								data-widget-custombutton="false"
+								data-widget-collapsed="true"
+								data-widget-sortable="false"
+
+								-->
+							<header>
+								<span class="widget-icon"> <i
+									class="glyphicon glyphicon-stats txt-color-darken"></i>
+								</span>
+								<h2>Live Feeds</h2>
+
+								<ul class="nav nav-tabs pull-right in" id="myTab">
+									<li class="active"><a data-toggle="tab" href="#s1"><i
+											class="fa fa-clock-o"></i> <span
+											class="hidden-mobile hidden-tablet">Live Stats</span></a></li>
+
+									<li><a data-toggle="tab" href="#s2"><i
+											class="fa fa-facebook"></i> <span
+											class="hidden-mobile hidden-tablet">Social Network</span></a></li>
+
+									<li><a data-toggle="tab" href="#s3"><i
+											class="fa fa-dollar"></i> <span
+											class="hidden-mobile hidden-tablet">Revenue</span></a></li>
+								</ul>
+
+							</header>
+
+							<!-- widget div-->
+							<div class="no-padding">
+								<!-- widget edit box -->
+								<div class="jarviswidget-editbox">test</div>
+								<!-- end widget edit box -->
+
+								<div class="widget-body">
+									<!-- content -->
+									<div id="myTabContent" class="tab-content">
+										<div
+											class="tab-pane fade active in padding-10 no-padding-bottom"
+											id="s1">
+											<div class="row no-space">
+												<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+													<span class="demo-liveupdate-1"> <span
+														class="onoffswitch-title">Live switch</span> <span
+														class="onoffswitch"> <input type="checkbox"
+															name="start_interval" class="onoffswitch-checkbox"
+															id="start_interval"> <label
+															class="onoffswitch-label" for="start_interval"> <span
+																class="onoffswitch-inner" data-swchon-text="ON"
+																data-swchoff-text="OFF"></span> <span
+																class="onoffswitch-switch"></span>
+														</label>
+													</span>
+													</span>
+													<div id="updating-chart" class="chart-large txt-color-blue"></div>
+
+												</div>
+												<div
+													class="col-xs-12 col-sm-12 col-md-4 col-lg-4 show-stats">
+
+													<div class="row">
+														<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
+															<span class="text"> My Tasks <span
+																class="pull-right">130/200</span>
+															</span>
+															<div class="progress">
+																<div class="progress-bar bg-color-blueDark"
+																	style="width: 65%;"></div>
+															</div>
+														</div>
+														<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
+															<span class="text"> Transfered <span
+																class="pull-right">440 GB</span>
+															</span>
+															<div class="progress">
+																<div class="progress-bar bg-color-blue"
+																	style="width: 34%;"></div>
+															</div>
+														</div>
+														<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
+															<span class="text"> Bugs Squashed<span
+																class="pull-right">77%</span>
+															</span>
+															<div class="progress">
+																<div class="progress-bar bg-color-blue"
+																	style="width: 77%;"></div>
+															</div>
+														</div>
+														<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
+															<span class="text"> User Testing <span
+																class="pull-right">7 Days</span>
+															</span>
+															<div class="progress">
+																<div class="progress-bar bg-color-greenLight"
+																	style="width: 84%;"></div>
+															</div>
+														</div>
+
+														<span class="show-stat-buttons"> <span
+															class="col-xs-12 col-sm-6 col-md-6 col-lg-6"> <a
+																href="javascript:void(0);"
+																class="btn btn-default btn-block hidden-xs">Generate
+																	PDF</a>
+														</span> <span class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+																<a href="javascript:void(0);"
+																class="btn btn-default btn-block hidden-xs">Report a
+																	bug</a>
+														</span>
+														</span>
+
+													</div>
+
+												</div>
+											</div>
+
+											<div class="show-stat-microcharts">
+												<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+
+													<div class="easy-pie-chart txt-color-orangeDark"
+														data-percent="33" data-pie-size="50">
+														<span class="percent percent-sign">35</span>
+													</div>
+													<span class="easy-pie-title"> Server Load <i
+														class="fa fa-caret-up icon-color-bad"></i>
+													</span>
+													<ul class="smaller-stat hidden-sm pull-right">
+														<li><span class="label bg-color-greenLight"><i
+																class="fa fa-caret-up"></i> 97%</span></li>
+														<li><span class="label bg-color-blueLight"><i
+																class="fa fa-caret-down"></i> 44%</span></li>
+													</ul>
+													<div
+														class="sparkline txt-color-greenLight hidden-sm hidden-md pull-right"
+														data-sparkline-type="line" data-sparkline-height="33px"
+														data-sparkline-width="70px" data-fill-color="transparent">
+														130, 187, 250, 257, 200, 210, 300, 270, 363, 247, 270,
+														363, 247</div>
+												</div>
+												<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+													<div class="easy-pie-chart txt-color-greenLight"
+														data-percent="78.9" data-pie-size="50">
+														<span class="percent percent-sign">78.9 </span>
+													</div>
+													<span class="easy-pie-title"> Disk Space <i
+														class="fa fa-caret-down icon-color-good"></i></span>
+													<ul class="smaller-stat hidden-sm pull-right">
+														<li><span class="label bg-color-blueDark"><i
+																class="fa fa-caret-up"></i> 76%</span></li>
+														<li><span class="label bg-color-blue"><i
+																class="fa fa-caret-down"></i> 3%</span></li>
+													</ul>
+													<div
+														class="sparkline txt-color-blue hidden-sm hidden-md pull-right"
+														data-sparkline-type="line" data-sparkline-height="33px"
+														data-sparkline-width="70px" data-fill-color="transparent">
+														257, 200, 210, 300, 270, 363, 130, 187, 250, 247, 270,
+														363, 247</div>
+												</div>
+												<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+													<div class="easy-pie-chart txt-color-blue"
+														data-percent="23" data-pie-size="50">
+														<span class="percent percent-sign">23 </span>
+													</div>
+													<span class="easy-pie-title"> Transfered <i
+														class="fa fa-caret-up icon-color-good"></i></span>
+													<ul class="smaller-stat hidden-sm pull-right">
+														<li><span class="label bg-color-darken">10GB</span></li>
+														<li><span class="label bg-color-blueDark"><i
+																class="fa fa-caret-up"></i> 10%</span></li>
+													</ul>
+													<div
+														class="sparkline txt-color-darken hidden-sm hidden-md pull-right"
+														data-sparkline-type="line" data-sparkline-height="33px"
+														data-sparkline-width="70px" data-fill-color="transparent">
+														200, 210, 363, 247, 300, 270, 130, 187, 250, 257, 363,
+														247, 270</div>
+												</div>
+												<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+													<div class="easy-pie-chart txt-color-darken"
+														data-percent="36" data-pie-size="50">
+														<span class="percent degree-sign">36 <i
+															class="fa fa-caret-up"></i></span>
+													</div>
+													<span class="easy-pie-title"> Temperature <i
+														class="fa fa-caret-down icon-color-good"></i></span>
+													<ul class="smaller-stat hidden-sm pull-right">
+														<li><span class="label bg-color-red"><i
+																class="fa fa-caret-up"></i> 124</span></li>
+														<li><span class="label bg-color-blue"><i
+																class="fa fa-caret-down"></i> 40 F</span></li>
+													</ul>
+													<div
+														class="sparkline txt-color-red hidden-sm hidden-md pull-right"
+														data-sparkline-type="line" data-sparkline-height="33px"
+														data-sparkline-width="70px" data-fill-color="transparent">
+														2700, 3631, 2471, 2700, 3631, 2471, 1300, 1877, 2500,
+														2577, 2000, 2100, 3000</div>
+												</div>
+											</div>
+
+										</div>
+										<!-- end s1 tab pane -->
+
+										<div class="tab-pane fade" id="s2">
+											<div class="widget-body-toolbar bg-color-white">
+
+												<form class="form-inline" role="form">
+
+													<div class="form-group">
+														<label class="sr-only" for="s123">Show From</label> <input
+															type="email" class="form-control input-sm" id="s123"
+															placeholder="Show From">
+													</div>
+													<div class="form-group">
+														<input type="email" class="form-control input-sm"
+															id="s124" placeholder="To">
+													</div>
+
+													<div class="btn-group hidden-phone pull-right">
+														<a class="btn dropdown-toggle btn-xs btn-default"
+															data-toggle="dropdown"><i class="fa fa-cog"></i> More
+															<span class="caret"> </span> </a>
+														<ul class="dropdown-menu pull-right">
+															<li><a href="javascript:void(0);"><i
+																	class="fa fa-file-text-alt"></i> Export to PDF</a></li>
+															<li><a href="javascript:void(0);"><i
+																	class="fa fa-question-sign"></i> Help</a></li>
+														</ul>
+													</div>
+
+												</form>
+
+											</div>
+											<div class="padding-10">
+												<div id="statsChart" class="chart-large has-legend-unique"></div>
+											</div>
+
+										</div>
+										<!-- end s2 tab pane -->
+
+										<div class="tab-pane fade" id="s3">
+
+											<div class="widget-body-toolbar bg-color-white smart-form"
+												id="rev-toggles">
+
+												<div class="inline-group">
+
+													<label for="gra-0" class="checkbox"> <input
+														type="checkbox" name="gra-0" id="gra-0" checked="checked">
+														<i></i> Target
+													</label> <label for="gra-1" class="checkbox"> <input
+														type="checkbox" name="gra-1" id="gra-1" checked="checked">
+														<i></i> Actual
+													</label> <label for="gra-2" class="checkbox"> <input
+														type="checkbox" name="gra-2" id="gra-2" checked="checked">
+														<i></i> Signups
+													</label>
+												</div>
+
+												<div class="btn-group hidden-phone pull-right">
+													<a class="btn dropdown-toggle btn-xs btn-default"
+														data-toggle="dropdown"><i class="fa fa-cog"></i> More
+														<span class="caret"> </span> </a>
+													<ul class="dropdown-menu pull-right">
+														<li><a href="javascript:void(0);"><i
+																class="fa fa-file-text-alt"></i> Export to PDF</a></li>
+														<li><a href="javascript:void(0);"><i
+																class="fa fa-question-sign"></i> Help</a></li>
+													</ul>
+												</div>
+
+											</div>
+
+											<div class="padding-10">
+												<div id="flotcontainer"
+													class="chart-large has-legend-unique"></div>
+											</div>
+										</div>
+										<!-- end s3 tab pane -->
+									</div>
+
+									<!-- end content -->
+								</div>
+
+							</div>
+							<!-- end widget div -->
+						</div>
+						<!-- end widget -->
+
+					</article>
+				</div>
+
+				<!-- end row -->
+
+				<!-- row -->
+
+
+				<!-- end row -->
+
+			</section>
 			<!-- end widget grid -->
+
 
 		</div>
 		<!-- END MAIN CONTENT -->
@@ -1046,12 +1524,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- END PAGE FOOTER -->
-
-	<!-- SHORTCUT AREA : With large tiles (activated via clicking user name tag)
-		Note: These tiles are completely responsive,
-		you can add as many as you like
-		-->
 	<div id="shortcut">
 		<ul>
 			<li><a href="inbox.html"
@@ -1092,15 +1564,8 @@
 			</a></li>
 		</ul>
 	</div>
-	<!-- END SHORTCUT AREA -->
-
-	<!--================================================== -->
-
-	<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
 	<script data-pace-options='{ "restartOnRequestAfter": true }'
 		src="${contextPath}/resources/js/plugin/pace/pace.min.js"></script>
-
-	<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
 	<script
 		src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script>
@@ -1118,81 +1583,36 @@
 					.write('<script src="${contextPath}/resources/js/libs/jquery-ui-1.10.3.min.js"><\/script>');
 		}
 	</script>
-
-	<!-- IMPORTANT: APP CONFIG -->
 	<script src="${contextPath}/resources/js/app.config.js"></script>
-
-	<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
 	<script
 		src="${contextPath}/resources/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script>
-
-	<!-- BOOTSTRAP JS -->
 	<script src="${contextPath}/resources/js/bootstrap/bootstrap.min.js"></script>
-
-	<!-- CUSTOM NOTIFICATION -->
 	<script
 		src="${contextPath}/resources/js/notification/SmartNotification.min.js"></script>
-
-	<!-- JARVIS WIDGETS -->
 	<script
 		src="${contextPath}/resources/js/smartwidgets/jarvis.widget.min.js"></script>
-
-	<!-- EASY PIE CHARTS -->
 	<script
 		src="${contextPath}/resources/js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
-
-	<!-- SPARKLINES -->
 	<script
 		src="${contextPath}/resources/js/plugin/sparkline/jquery.sparkline.min.js"></script>
-
-	<!-- JQUERY VALIDATE -->
 	<script
 		src="${contextPath}/resources/js/plugin/jquery-validate/jquery.validate.min.js"></script>
-
-	<!-- JQUERY MASKED INPUT -->
 	<script
 		src="${contextPath}/resources/js/plugin/masked-input/jquery.maskedinput.min.js"></script>
-
-	<!-- JQUERY SELECT2 INPUT -->
 	<script src="${contextPath}/resources/js/plugin/select2/select2.min.js"></script>
-
-	<!-- JQUERY UI + Bootstrap Slider -->
 	<script
 		src="${contextPath}/resources/js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
-
-	<!-- browser msie issue fix -->
 	<script
 		src="${contextPath}/resources/js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
-
-	<!-- FastClick: For mobile devices -->
 	<script
 		src="${contextPath}/resources/js/plugin/fastclick/fastclick.min.js"></script>
-
-	<!--[if IE 8]>
-
-		<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
-
-		<![endif]-->
-
-	<!-- Demo purpose only -->
 	<script src="${contextPath}/resources/js/demo.min.js"></script>
-
-	<!-- MAIN APP JS FILE -->
 	<script src="${contextPath}/resources/js/app.min.js"></script>
-
-	<!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
-	<!-- Voice command : plugin -->
 	<script src="${contextPath}/resources/js/speech/voicecommand.min.js"></script>
-
-	<!-- SmartChat UI : plugin -->
 	<script
 		src="${contextPath}/resources/js/smart-chat-ui/smart.chat.ui.min.js"></script>
 	<script
 		src="${contextPath}/resources/js/smart-chat-ui/smart.chat.manager.min.js"></script>
-
-	<!-- PAGE RELATED PLUGIN(S) -->
-
-	<!-- Flot Chart Plugin: Flot Engine, Flot Resizer, Flot Tooltip -->
 	<script
 		src="${contextPath}/resources/js/plugin/flot/jquery.flot.cust.min.js"></script>
 	<script
@@ -1201,14 +1621,10 @@
 		src="${contextPath}/resources/js/plugin/flot/jquery.flot.time.min.js"></script>
 	<script
 		src="${contextPath}/resources/js/plugin/flot/jquery.flot.tooltip.min.js"></script>
-
-	<!-- Vector Maps Plugin: Vectormap engine, Vectormap language -->
 	<script
 		src="${contextPath}/resources/js/plugin/vectormap/jquery-jvectormap-1.2.2.min.js"></script>
 	<script
 		src="${contextPath}/resources/js/plugin/vectormap/jquery-jvectormap-world-mill-en.js"></script>
-
-	<!-- Full Calendar -->
 	<script src="${contextPath}/resources/js/plugin/moment/moment.min.js"></script>
 	<script
 		src="${contextPath}/resources/js/plugin/fullcalendar/jquery.fullcalendar.min.js"></script>
@@ -1217,14 +1633,7 @@
 		$(document)
 				.ready(
 						function() {
-
-							// DO NOT REMOVE : GLOBAL FUNCTIONS!
 							pageSetUp();
-
-							/*
-							 * PAGE RELATED SCRIPTS
-							 */
-
 							$(".js-status-update a")
 									.click(
 											function() {
