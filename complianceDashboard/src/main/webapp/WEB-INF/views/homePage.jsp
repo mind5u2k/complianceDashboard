@@ -78,11 +78,26 @@
 	href="${contextPath}/resources/img/splash/iphone.png"
 	media="screen and (max-device-width: 320px)">
 
+
+<style>
+.grids {
+	background: #fff;
+	text-align: center;
+	border: 1px solid #ccc;
+	border-radius: 12px;
+	box-shadow: 4px 4px 3px #ccc;
+}
+
+.grids:hover {
+	box-shadow: 4px 4px 3px #3a3838;
+	cursor: pointer;
+}
+</style>
 </head>
 
 
 
-<body class="fixed-header fixed-navigation">
+<body class="fixed-header fixed-navigation fixed-page-footer">
 
 	<!-- HEADER -->
 	<header id="header" style="background: #313131 !important;">
@@ -173,1397 +188,262 @@
 		</div>
 	</header>
 	<aside id="left-panel" style="background: #464545 !important;">
-		<div class="login-info">
-			<span> <a href="javascript:void(0);" id="show-shortcut"
-				data-action="toggleShortcut"> <img
-					src="${contextPath}/resources/img/avatars/sunny.png" alt="me"
-					class="online" /> <span> ${userModel.fullName} </span> <i
-					class="fa fa-angle-down"></i>
+		<div class="login-info" style="background: #202440;">
+			<span style="font-size: 18px;"> <a href="javascript:void(0);"
+				id="show-shortcut" data-action="toggleShortcut" style="color: #fff;">
+					<i class="fa fa-user"></i> &nbsp;&nbsp;<span>
+						${userModel.fullName} </span>
 			</a>
 			</span>
 		</div>
 		<nav>
 			<ul>
 				<li class="active"><a href="index.html" title="Dashboard"><i
-						class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>
+						class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Home</span></a>
 				</li>
 				<li><a href="inbox.html"><i class="fa fa-lg fa-fw fa-inbox"></i>
-						<span class="menu-item-parent">Inbox</span><span
-						class="badge pull-right inbox-badge">14</span></a></li>
+						<span class="menu-item-parent">Leadership Dashboard </span></a></li>
 				<li><a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i>
-						<span class="menu-item-parent">Graphs</span></a>
+						<span class="menu-item-parent">Compliance Scorecard</span></a>
 					<ul>
-						<li><a href="flot.html">Flot Chart</a></li>
-						<li><a href="morris.html">Morris Charts</a></li>
-						<li><a href="inline-charts.html">Inline Charts</a></li>
-						<li><a href="dygraphs.html">Dygraphs</a></li>
-						<li><a href="chartjs.html">Chart.js <span
-								class="badge pull-right inbox-badge bg-color-yellow">new</span></a>
-						</li>
+						<li><a href="flot.html">Overall - India Center</a></li>
+						<li><a href="morris.html">By SDL</a></li>
+						<li><a href="inline-charts.html">By Location</a></li>
+						<li><a href="dygraphs.html">By CP</a></li>
+						<li><a href="chartjs.html">By Account </a></li>
+						<li><a href="chartjs.html">Applicability Database</a></li>
 					</ul></li>
-				<li><a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span
-						class="menu-item-parent">Tables</span></a>
-					<ul>
-						<li><a href="table.html">Normal Tables</a></li>
-						<li><a href="datatables.html">Data Tables <span
-								class="badge inbox-badge bg-color-greenLight">v1.10</span></a></li>
-						<li><a href="jqgrid.html">Jquery Grid</a></li>
-					</ul></li>
-				<li><a href="#"><i
-						class="fa fa-lg fa-fw fa-pencil-square-o"></i> <span
-						class="menu-item-parent">Forms</span></a>
-					<ul>
-						<li><a href="form-elements.html">Smart Form Elements</a></li>
-						<li><a href="form-templates.html">Smart Form Layouts</a></li>
-						<li><a href="validation.html">Smart Form Validation</a></li>
-						<li><a href="bootstrap-forms.html">Bootstrap Form
-								Elements</a></li>
-						<li><a href="bootstrap-validator.html">Bootstrap Form
-								Validation</a></li>
-						<li><a href="plugins.html">Form Plugins</a></li>
-						<li><a href="wizard.html">Wizards</a></li>
-						<li><a href="other-editors.html">Bootstrap Editors</a></li>
-						<li><a href="dropzone.html">Dropzone </a></li>
-						<li><a href="image-editor.html">Image Cropping <span
-								class="badge pull-right inbox-badge bg-color-yellow">new</span></a>
-						</li>
-					</ul></li>
-				<li><a href="#"><i class="fa fa-lg fa-fw fa-desktop"></i> <span
-						class="menu-item-parent">UI Elements</span></a>
-					<ul>
-						<li><a href="general-elements.html">General Elements</a></li>
-						<li><a href="buttons.html">Buttons</a></li>
-						<li><a href="#">Icons</a>
-							<ul>
-								<li><a href="fa.html"><i class="fa fa-plane"></i> Font
-										Awesome</a></li>
-								<li><a href="glyph.html"><i
-										class="glyphicon glyphicon-plane"></i> Glyph Icons</a></li>
-								<li><a href="flags.html"><i class="fa fa-flag"></i>
-										Flags</a></li>
-							</ul></li>
-						<li><a href="grid.html">Grid</a></li>
-						<li><a href="treeview.html">Tree View</a></li>
-						<li><a href="nestable-list.html">Nestable Lists</a></li>
-						<li><a href="jqui.html">JQuery UI</a></li>
-						<li><a href="typography.html">Typography</a></li>
-						<li><a href="#">Six Level Menu</a>
-							<ul>
-								<li><a href="#"><i class="fa fa-fw fa-folder-open"></i>
-										Item #2</a>
-									<ul>
-										<li><a href="#"><i class="fa fa-fw fa-folder-open"></i>
-												Sub #2.1 </a>
-											<ul>
-												<li><a href="#"><i class="fa fa-fw fa-file-text"></i>
-														Item #2.1.1</a></li>
-												<li><a href="#"><i class="fa fa-fw fa-plus"></i>
-														Expand</a>
-													<ul>
-														<li><a href="#"><i class="fa fa-fw fa-file-text"></i>
-																File</a></li>
-														<li><a href="#"><i class="fa fa-fw fa-trash-o"></i>
-																Delete</a></li>
-													</ul></li>
-											</ul></li>
-									</ul></li>
-								<li><a href="#"><i class="fa fa-fw fa-folder-open"></i>
-										Item #3</a>
-
-									<ul>
-										<li><a href="#"><i class="fa fa-fw fa-folder-open"></i>
-												3ed Level </a>
-											<ul>
-												<li><a href="#"><i class="fa fa-fw fa-file-text"></i>
-														File</a></li>
-												<li><a href="#"><i class="fa fa-fw fa-file-text"></i>
-														File</a></li>
-											</ul></li>
-									</ul></li>
-							</ul></li>
-					</ul></li>
-
-				<li><a href="calendar.html"><i
-						class="fa fa-lg fa-fw fa-calendar"><em>3</em></i> <span
-						class="menu-item-parent">Calendar</span></a></li>
-				<li><a href="widgets.html"><i
-						class="fa fa-lg fa-fw fa-list-alt"></i> <span
-						class="menu-item-parent">Widgets</span></a></li>
-				<li><a href="#"><i class="fa fa-lg fa-fw fa-puzzle-piece"></i>
-						<span class="menu-item-parent">App Views</span></a>
-					<ul>
-						<li><a href="projects.html"><i class="fa fa-file-text-o"></i>
-								Projects</a></li>
-						<li><a href="blog.html"><i class="fa fa-paragraph"></i>
-								Blog</a></li>
-						<li><a href="gallery.html"><i class="fa fa-picture-o"></i>
-								Gallery</a></li>
-
-						<li><a href="#"><i class="fa fa-comments"></i> Forum
-								Layout</a>
-							<ul>
-								<li><a href="forum.html">General View</a></li>
-								<li><a href="forum-topic.html">Topic View</a></li>
-								<li><a href="forum-post.html">Post View</a></li>
-							</ul></li>
-						<li><a href="profile.html"><i class="fa fa-group"></i>
-								Profile</a></li>
-						<li><a href="timeline.html"><i class="fa fa-clock-o"></i>
-								Timeline</a></li>
-					</ul></li>
-				<li><a href="gmap-xml.html"><i
-						class="fa fa-lg fa-fw fa-map-marker"></i> <span
-						class="menu-item-parent">GMap Skins</span><span
-						class="badge bg-color-greenLight pull-right inbox-badge">9</span></a>
-				</li>
-				<li><a href="#"><i class="fa fa-lg fa-fw fa-windows"></i> <span
-						class="menu-item-parent">Miscellaneous</span></a>
-					<ul>
-						<li><a href="http://bootstraphunter.com/smartadmin-landing/"
-							target="_blank">Landing Page <i class="fa fa-external-link"></i></a>
-						</li>
-						<li><a href="pricing-table.html">Pricing Tables</a></li>
-						<li><a href="invoice.html">Invoice</a></li>
-						<li><a href="login.html" target="_top">Login</a></li>
-						<li><a href="register.html" target="_top">Register</a></li>
-						<li><a href="lock.html" target="_top">Locked Screen</a></li>
-						<li><a href="error404.html">Error 404</a></li>
-						<li><a href="error500.html">Error 500</a></li>
-						<li><a href="blank_.html">Blank Page</a></li>
-						<li><a href="email-template.html">Email Template</a></li>
-						<li><a href="search.html">Search Page</a></li>
-						<li><a href="ckeditor.html">CK Editor</a></li>
-					</ul></li>
-				<li class="top-menu-invisible"><a href="#"><i
-						class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span
-						class="menu-item-parent">SmartAdmin Intel</span></a>
-					<ul>
-						<li><a href="difver.html"><i class="fa fa-stack-overflow"></i>
-								Different Versions</a></li>
-						<li><a href="applayout.html"><i class="fa fa-cube"></i>
-								App Settings</a></li>
-						<li><a
-							href="http://bootstraphunter.com/smartadmin/BUGTRACK/track_/documentation/index.html"
-							target="_blank"><i class="fa fa-book"></i> Documentation</a></li>
-						<li><a
-							href="http://bootstraphunter.com/smartadmin/BUGTRACK/track_/"
-							target="_blank"><i class="fa fa-bug"></i> Bug Tracker</a></li>
-					</ul></li>
-				<li class="chat-users top-menu-invisible"><a href="#"><i
-						class="fa fa-lg fa-fw fa-comment-o"><em
-							class="bg-color-pink flash animated">!</em></i> <span
-						class="menu-item-parent">Smart Chat API <sup>beta</sup></span></a>
-					<ul>
-						<li>
-							<!-- DISPLAY USERS -->
-							<div class="display-users">
-
-								<input class="form-control chat-user-filter"
-									placeholder="Filter" type="text"> <a href="#"
-									class="usr" data-chat-id="cha1" data-chat-fname="Sadi"
-									data-chat-lname="Orlaf" data-chat-status="busy"
-									data-chat-alertmsg="Sadi Orlaf is in a meeting. Please do not disturb!"
-									data-chat-alertshow="true" data-rel="popover-hover"
-									data-placement="right" data-html="true"
-									data-content="
-											<div class='usr-card'>
-												<img src='img/avatars/5.png' alt='Sadi Orlaf'>
-												<div class='usr-card-content'>
-													<h3>Sadi Orlaf</h3>
-													<p>Marketing Executive</p>
-												</div>
-											</div>
-										">
-									<i></i>Sadi Orlaf
-								</a> <a href="#" class="usr" data-chat-id="cha2"
-									data-chat-fname="Jessica" data-chat-lname="Dolof"
-									data-chat-status="online" data-chat-alertmsg=""
-									data-chat-alertshow="false" data-rel="popover-hover"
-									data-placement="right" data-html="true"
-									data-content="
-											<div class='usr-card'>
-												<img src='img/avatars/1.png' alt='Jessica Dolof'>
-												<div class='usr-card-content'>
-													<h3>Jessica Dolof</h3>
-													<p>Sales Administrator</p>
-												</div>
-											</div>
-										">
-									<i></i>Jessica Dolof
-								</a> <a href="#" class="usr" data-chat-id="cha3"
-									data-chat-fname="Zekarburg" data-chat-lname="Almandalie"
-									data-chat-status="online" data-rel="popover-hover"
-									data-placement="right" data-html="true"
-									data-content="
-											<div class='usr-card'>
-												<img src='img/avatars/3.png' alt='Zekarburg Almandalie'>
-												<div class='usr-card-content'>
-													<h3>Zekarburg Almandalie</h3>
-													<p>Sales Admin</p>
-												</div>
-											</div>
-										">
-									<i></i>Zekarburg Almandalie
-								</a> <a href="#" class="usr" data-chat-id="cha4"
-									data-chat-fname="Barley" data-chat-lname="Krazurkth"
-									data-chat-status="away" data-rel="popover-hover"
-									data-placement="right" data-html="true"
-									data-content="
-											<div class='usr-card'>
-												<img src='img/avatars/4.png' alt='Barley Krazurkth'>
-												<div class='usr-card-content'>
-													<h3>Barley Krazurkth</h3>
-													<p>Sales Director</p>
-												</div>
-											</div>
-										">
-									<i></i>Barley Krazurkth
-								</a> <a href="#" class="usr offline" data-chat-id="cha5"
-									data-chat-fname="Farhana" data-chat-lname="Amrin"
-									data-chat-status="incognito" data-rel="popover-hover"
-									data-placement="right" data-html="true"
-									data-content="
-											<div class='usr-card'>
-												<img src='img/avatars/female.png' alt='Farhana Amrin'>
-												<div class='usr-card-content'>
-													<h3>Farhana Amrin</h3>
-													<p>Support Admin <small><i class='fa fa-music'></i> Playing Beethoven Classics</small></p>
-												</div>
-											</div>
-										">
-									<i></i>Farhana Amrin (offline)
-								</a> <a href="#" class="usr offline" data-chat-id="cha6"
-									data-chat-fname="Lezley" data-chat-lname="Jacob"
-									data-chat-status="incognito" data-rel="popover-hover"
-									data-placement="right" data-html="true"
-									data-content="
-											<div class='usr-card'>
-												<img src='img/avatars/male.png' alt='Lezley Jacob'>
-												<div class='usr-card-content'>
-													<h3>Lezley Jacob</h3>
-													<p>Sales Director</p>
-												</div>
-											</div>
-										">
-									<i></i>Lezley Jacob (offline)
-								</a> <a href="ajax/chat.html"
-									class="btn btn-xs btn-default btn-block sa-chat-learnmore-btn">About
-									the API</a>
-
-							</div> <!-- END DISPLAY USERS -->
-						</li>
-					</ul></li>
-
+				<li><a href="inbox.html"><i class="fa fa-lg fa-fw fa-inbox"></i>
+						<span class="menu-item-parent">Form by Account</span></a></li>
+				<li><a href="inbox.html"><i class="fa fa-lg fa-fw fa-inbox"></i>
+						<span class="menu-item-parent">User Access Mgmt</span></a></li>
+				<li><a href="inbox.html"><i class="fa fa-lg fa-fw fa-inbox"></i>
+						<span class="menu-item-parent">CP Alignment Database </span></a></li>
+				<li><a href="inbox.html"><i class="fa fa-lg fa-fw fa-inbox"></i>
+						<span class="menu-item-parent">Esc Matrix Database </span></a></li>
+				<li><a href="inbox.html"><i class="fa fa-lg fa-fw fa-inbox"></i>
+						<span class="menu-item-parent">Parameters & Reports </span></a></li>
+				<li><div class="minifyme"
+						style="background: rgb(123, 120, 120); position: unset; text-align: center; font-size: 24px; padding: 6px 1px 31px; margin-top: 17px; cursor: pointer; width: 100%;"
+						data-action="minifyMenu">
+						<i class="fa fa-arrow-circle-left hit"></i>
+					</div></li>
 			</ul>
 		</nav>
-		<span class="minifyme" data-action="minifyMenu"> <i
-			class="fa fa-arrow-circle-left hit"></i>
-		</span>
-
 	</aside>
-	<!-- END NAVIGATION -->
-
-	<!-- MAIN PANEL -->
 	<div id="main" role="main">
-
-		<!-- RIBBON -->
 		<div id="ribbon" style="background: #777474 !important;">
-
-
-			</span>
-
-			<!-- breadcrumb -->
 			<ol class="breadcrumb">
 				<li>Home</li>
-				<li>Dashboard</li>
 			</ol>
-			<!-- end breadcrumb -->
-
-			<!-- You can also add more buttons to the
-				ribbon for further usability
-
-				Example below:
-
-				<span class="ribbon-button-alignment pull-right">
-				<span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
-				<span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
-				<span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
-				</span> -->
-
 		</div>
-		<!-- END RIBBON -->
-
-		<!-- MAIN CONTENT -->
 		<div id="content">
-
-			<div class="row"></div>
-			<!-- widget grid -->
-			<section id="widget-grid" class="">
-
-				<!-- row -->
-				<div class="row">
-					<article class="col-sm-12">
-						<!-- new widget -->
-						<div class="jarviswidget" id="wid-id-0"
-							data-widget-togglebutton="false" data-widget-editbutton="false"
-							data-widget-fullscreenbutton="false"
-							data-widget-colorbutton="false" data-widget-deletebutton="false">
-							<!-- widget options:
-								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-
-								data-widget-colorbutton="false"
-								data-widget-editbutton="false"
-								data-widget-togglebutton="false"
-								data-widget-deletebutton="false"
-								data-widget-fullscreenbutton="false"
-								data-widget-custombutton="false"
-								data-widget-collapsed="true"
-								data-widget-sortable="false"
-
-								-->
-							<header>
-								<span class="widget-icon"> <i
-									class="glyphicon glyphicon-stats txt-color-darken"></i>
-								</span>
-								<h2>Live Feeds</h2>
-
-								<ul class="nav nav-tabs pull-right in" id="myTab">
-									<li class="active"><a data-toggle="tab" href="#s1"><i
-											class="fa fa-clock-o"></i> <span
-											class="hidden-mobile hidden-tablet">Live Stats</span></a></li>
-
-									<li><a data-toggle="tab" href="#s2"><i
-											class="fa fa-facebook"></i> <span
-											class="hidden-mobile hidden-tablet">Social Network</span></a></li>
-
-									<li><a data-toggle="tab" href="#s3"><i
-											class="fa fa-dollar"></i> <span
-											class="hidden-mobile hidden-tablet">Revenue</span></a></li>
-								</ul>
-
-							</header>
-
-							<!-- widget div-->
-							<div class="no-padding">
-								<!-- widget edit box -->
-								<div class="jarviswidget-editbox">test</div>
-								<!-- end widget edit box -->
-
-								<div class="widget-body">
-									<!-- content -->
-									<div id="myTabContent" class="tab-content">
-										<div
-											class="tab-pane fade active in padding-10 no-padding-bottom"
-											id="s1">
-											<div class="row no-space">
-												<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-													<span class="demo-liveupdate-1"> <span
-														class="onoffswitch-title">Live switch</span> <span
-														class="onoffswitch"> <input type="checkbox"
-															name="start_interval" class="onoffswitch-checkbox"
-															id="start_interval"> <label
-															class="onoffswitch-label" for="start_interval"> <span
-																class="onoffswitch-inner" data-swchon-text="ON"
-																data-swchoff-text="OFF"></span> <span
-																class="onoffswitch-switch"></span>
-														</label>
-													</span>
-													</span>
-													<div id="updating-chart" class="chart-large txt-color-blue"></div>
-
-												</div>
-												<div
-													class="col-xs-12 col-sm-12 col-md-4 col-lg-4 show-stats">
-
-													<div class="row">
-														<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
-															<span class="text"> My Tasks <span
-																class="pull-right">130/200</span>
-															</span>
-															<div class="progress">
-																<div class="progress-bar bg-color-blueDark"
-																	style="width: 65%;"></div>
-															</div>
-														</div>
-														<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
-															<span class="text"> Transfered <span
-																class="pull-right">440 GB</span>
-															</span>
-															<div class="progress">
-																<div class="progress-bar bg-color-blue"
-																	style="width: 34%;"></div>
-															</div>
-														</div>
-														<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
-															<span class="text"> Bugs Squashed<span
-																class="pull-right">77%</span>
-															</span>
-															<div class="progress">
-																<div class="progress-bar bg-color-blue"
-																	style="width: 77%;"></div>
-															</div>
-														</div>
-														<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
-															<span class="text"> User Testing <span
-																class="pull-right">7 Days</span>
-															</span>
-															<div class="progress">
-																<div class="progress-bar bg-color-greenLight"
-																	style="width: 84%;"></div>
-															</div>
-														</div>
-
-														<span class="show-stat-buttons"> <span
-															class="col-xs-12 col-sm-6 col-md-6 col-lg-6"> <a
-																href="javascript:void(0);"
-																class="btn btn-default btn-block hidden-xs">Generate
-																	PDF</a>
-														</span> <span class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-																<a href="javascript:void(0);"
-																class="btn btn-default btn-block hidden-xs">Report a
-																	bug</a>
-														</span>
-														</span>
-
-													</div>
-
-												</div>
-											</div>
-
-											<div class="show-stat-microcharts">
-												<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-
-													<div class="easy-pie-chart txt-color-orangeDark"
-														data-percent="33" data-pie-size="50">
-														<span class="percent percent-sign">35</span>
-													</div>
-													<span class="easy-pie-title"> Server Load <i
-														class="fa fa-caret-up icon-color-bad"></i>
-													</span>
-													<ul class="smaller-stat hidden-sm pull-right">
-														<li><span class="label bg-color-greenLight"><i
-																class="fa fa-caret-up"></i> 97%</span></li>
-														<li><span class="label bg-color-blueLight"><i
-																class="fa fa-caret-down"></i> 44%</span></li>
-													</ul>
-													<div
-														class="sparkline txt-color-greenLight hidden-sm hidden-md pull-right"
-														data-sparkline-type="line" data-sparkline-height="33px"
-														data-sparkline-width="70px" data-fill-color="transparent">
-														130, 187, 250, 257, 200, 210, 300, 270, 363, 247, 270,
-														363, 247</div>
-												</div>
-												<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-													<div class="easy-pie-chart txt-color-greenLight"
-														data-percent="78.9" data-pie-size="50">
-														<span class="percent percent-sign">78.9 </span>
-													</div>
-													<span class="easy-pie-title"> Disk Space <i
-														class="fa fa-caret-down icon-color-good"></i></span>
-													<ul class="smaller-stat hidden-sm pull-right">
-														<li><span class="label bg-color-blueDark"><i
-																class="fa fa-caret-up"></i> 76%</span></li>
-														<li><span class="label bg-color-blue"><i
-																class="fa fa-caret-down"></i> 3%</span></li>
-													</ul>
-													<div
-														class="sparkline txt-color-blue hidden-sm hidden-md pull-right"
-														data-sparkline-type="line" data-sparkline-height="33px"
-														data-sparkline-width="70px" data-fill-color="transparent">
-														257, 200, 210, 300, 270, 363, 130, 187, 250, 247, 270,
-														363, 247</div>
-												</div>
-												<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-													<div class="easy-pie-chart txt-color-blue"
-														data-percent="23" data-pie-size="50">
-														<span class="percent percent-sign">23 </span>
-													</div>
-													<span class="easy-pie-title"> Transfered <i
-														class="fa fa-caret-up icon-color-good"></i></span>
-													<ul class="smaller-stat hidden-sm pull-right">
-														<li><span class="label bg-color-darken">10GB</span></li>
-														<li><span class="label bg-color-blueDark"><i
-																class="fa fa-caret-up"></i> 10%</span></li>
-													</ul>
-													<div
-														class="sparkline txt-color-darken hidden-sm hidden-md pull-right"
-														data-sparkline-type="line" data-sparkline-height="33px"
-														data-sparkline-width="70px" data-fill-color="transparent">
-														200, 210, 363, 247, 300, 270, 130, 187, 250, 257, 363,
-														247, 270</div>
-												</div>
-												<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-													<div class="easy-pie-chart txt-color-darken"
-														data-percent="36" data-pie-size="50">
-														<span class="percent degree-sign">36 <i
-															class="fa fa-caret-up"></i></span>
-													</div>
-													<span class="easy-pie-title"> Temperature <i
-														class="fa fa-caret-down icon-color-good"></i></span>
-													<ul class="smaller-stat hidden-sm pull-right">
-														<li><span class="label bg-color-red"><i
-																class="fa fa-caret-up"></i> 124</span></li>
-														<li><span class="label bg-color-blue"><i
-																class="fa fa-caret-down"></i> 40 F</span></li>
-													</ul>
-													<div
-														class="sparkline txt-color-red hidden-sm hidden-md pull-right"
-														data-sparkline-type="line" data-sparkline-height="33px"
-														data-sparkline-width="70px" data-fill-color="transparent">
-														2700, 3631, 2471, 2700, 3631, 2471, 1300, 1877, 2500,
-														2577, 2000, 2100, 3000</div>
-												</div>
-											</div>
-
-										</div>
-										<!-- end s1 tab pane -->
-
-										<div class="tab-pane fade" id="s2">
-											<div class="widget-body-toolbar bg-color-white">
-
-												<form class="form-inline" role="form">
-
-													<div class="form-group">
-														<label class="sr-only" for="s123">Show From</label> <input
-															type="email" class="form-control input-sm" id="s123"
-															placeholder="Show From">
-													</div>
-													<div class="form-group">
-														<input type="email" class="form-control input-sm"
-															id="s124" placeholder="To">
-													</div>
-
-													<div class="btn-group hidden-phone pull-right">
-														<a class="btn dropdown-toggle btn-xs btn-default"
-															data-toggle="dropdown"><i class="fa fa-cog"></i> More
-															<span class="caret"> </span> </a>
-														<ul class="dropdown-menu pull-right">
-															<li><a href="javascript:void(0);"><i
-																	class="fa fa-file-text-alt"></i> Export to PDF</a></li>
-															<li><a href="javascript:void(0);"><i
-																	class="fa fa-question-sign"></i> Help</a></li>
-														</ul>
-													</div>
-
-												</form>
-
-											</div>
-											<div class="padding-10">
-												<div id="statsChart" class="chart-large has-legend-unique"></div>
-											</div>
-
-										</div>
-										<!-- end s2 tab pane -->
-
-										<div class="tab-pane fade" id="s3">
-
-											<div class="widget-body-toolbar bg-color-white smart-form"
-												id="rev-toggles">
-
-												<div class="inline-group">
-
-													<label for="gra-0" class="checkbox"> <input
-														type="checkbox" name="gra-0" id="gra-0" checked="checked">
-														<i></i> Target
-													</label> <label for="gra-1" class="checkbox"> <input
-														type="checkbox" name="gra-1" id="gra-1" checked="checked">
-														<i></i> Actual
-													</label> <label for="gra-2" class="checkbox"> <input
-														type="checkbox" name="gra-2" id="gra-2" checked="checked">
-														<i></i> Signups
-													</label>
-												</div>
-
-												<div class="btn-group hidden-phone pull-right">
-													<a class="btn dropdown-toggle btn-xs btn-default"
-														data-toggle="dropdown"><i class="fa fa-cog"></i> More
-														<span class="caret"> </span> </a>
-													<ul class="dropdown-menu pull-right">
-														<li><a href="javascript:void(0);"><i
-																class="fa fa-file-text-alt"></i> Export to PDF</a></li>
-														<li><a href="javascript:void(0);"><i
-																class="fa fa-question-sign"></i> Help</a></li>
-													</ul>
-												</div>
-
-											</div>
-
-											<div class="padding-10">
-												<div id="flotcontainer"
-													class="chart-large has-legend-unique"></div>
-											</div>
-										</div>
-										<!-- end s3 tab pane -->
-									</div>
-
-									<!-- end content -->
-								</div>
-
+			<div class="row">
+				<div class="col-xs-3" style="margin-bottom: 12px;">
+					<div class=" col-md-12 grids">
+						<div class="lockscreen animated flipInY">
+							<div style="padding-top: 13px;">
+								<i class="fa fa-key"
+									style="font-size: 88px; color: #7f7878; text-shadow: 2px 2px 2px #171515;"></i>
 							</div>
-							<!-- end widget div -->
-						</div>
-						<!-- end widget -->
-
-					</article>
-				</div>
-
-				<!-- end row -->
-
-				<!-- row -->
-
-
-				<!-- end row -->
-
-			</section>
-			<section id="widget-grid" class="">
-
-				<!-- row -->
-				<div class="row">
-					<article class="col-sm-12">
-						<!-- new widget -->
-						<div class="jarviswidget" id="wid-id-0"
-							data-widget-togglebutton="false" data-widget-editbutton="false"
-							data-widget-fullscreenbutton="false"
-							data-widget-colorbutton="false" data-widget-deletebutton="false">
-							<!-- widget options:
-								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-
-								data-widget-colorbutton="false"
-								data-widget-editbutton="false"
-								data-widget-togglebutton="false"
-								data-widget-deletebutton="false"
-								data-widget-fullscreenbutton="false"
-								data-widget-custombutton="false"
-								data-widget-collapsed="true"
-								data-widget-sortable="false"
-
-								-->
-							<header>
-								<span class="widget-icon"> <i
-									class="glyphicon glyphicon-stats txt-color-darken"></i>
-								</span>
-								<h2>Live Feeds</h2>
-
-								<ul class="nav nav-tabs pull-right in" id="myTab">
-									<li class="active"><a data-toggle="tab" href="#s1"><i
-											class="fa fa-clock-o"></i> <span
-											class="hidden-mobile hidden-tablet">Live Stats</span></a></li>
-
-									<li><a data-toggle="tab" href="#s2"><i
-											class="fa fa-facebook"></i> <span
-											class="hidden-mobile hidden-tablet">Social Network</span></a></li>
-
-									<li><a data-toggle="tab" href="#s3"><i
-											class="fa fa-dollar"></i> <span
-											class="hidden-mobile hidden-tablet">Revenue</span></a></li>
-								</ul>
-
-							</header>
-
-							<!-- widget div-->
-							<div class="no-padding">
-								<!-- widget edit box -->
-								<div class="jarviswidget-editbox">test</div>
-								<!-- end widget edit box -->
-
-								<div class="widget-body">
-									<!-- content -->
-									<div id="myTabContent" class="tab-content">
-										<div
-											class="tab-pane fade active in padding-10 no-padding-bottom"
-											id="s1">
-											<div class="row no-space">
-												<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-													<span class="demo-liveupdate-1"> <span
-														class="onoffswitch-title">Live switch</span> <span
-														class="onoffswitch"> <input type="checkbox"
-															name="start_interval" class="onoffswitch-checkbox"
-															id="start_interval"> <label
-															class="onoffswitch-label" for="start_interval"> <span
-																class="onoffswitch-inner" data-swchon-text="ON"
-																data-swchoff-text="OFF"></span> <span
-																class="onoffswitch-switch"></span>
-														</label>
-													</span>
-													</span>
-													<div id="updating-chart" class="chart-large txt-color-blue"></div>
-
-												</div>
-												<div
-													class="col-xs-12 col-sm-12 col-md-4 col-lg-4 show-stats">
-
-													<div class="row">
-														<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
-															<span class="text"> My Tasks <span
-																class="pull-right">130/200</span>
-															</span>
-															<div class="progress">
-																<div class="progress-bar bg-color-blueDark"
-																	style="width: 65%;"></div>
-															</div>
-														</div>
-														<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
-															<span class="text"> Transfered <span
-																class="pull-right">440 GB</span>
-															</span>
-															<div class="progress">
-																<div class="progress-bar bg-color-blue"
-																	style="width: 34%;"></div>
-															</div>
-														</div>
-														<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
-															<span class="text"> Bugs Squashed<span
-																class="pull-right">77%</span>
-															</span>
-															<div class="progress">
-																<div class="progress-bar bg-color-blue"
-																	style="width: 77%;"></div>
-															</div>
-														</div>
-														<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
-															<span class="text"> User Testing <span
-																class="pull-right">7 Days</span>
-															</span>
-															<div class="progress">
-																<div class="progress-bar bg-color-greenLight"
-																	style="width: 84%;"></div>
-															</div>
-														</div>
-
-														<span class="show-stat-buttons"> <span
-															class="col-xs-12 col-sm-6 col-md-6 col-lg-6"> <a
-																href="javascript:void(0);"
-																class="btn btn-default btn-block hidden-xs">Generate
-																	PDF</a>
-														</span> <span class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-																<a href="javascript:void(0);"
-																class="btn btn-default btn-block hidden-xs">Report a
-																	bug</a>
-														</span>
-														</span>
-
-													</div>
-
-												</div>
-											</div>
-
-											<div class="show-stat-microcharts">
-												<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-
-													<div class="easy-pie-chart txt-color-orangeDark"
-														data-percent="33" data-pie-size="50">
-														<span class="percent percent-sign">35</span>
-													</div>
-													<span class="easy-pie-title"> Server Load <i
-														class="fa fa-caret-up icon-color-bad"></i>
-													</span>
-													<ul class="smaller-stat hidden-sm pull-right">
-														<li><span class="label bg-color-greenLight"><i
-																class="fa fa-caret-up"></i> 97%</span></li>
-														<li><span class="label bg-color-blueLight"><i
-																class="fa fa-caret-down"></i> 44%</span></li>
-													</ul>
-													<div
-														class="sparkline txt-color-greenLight hidden-sm hidden-md pull-right"
-														data-sparkline-type="line" data-sparkline-height="33px"
-														data-sparkline-width="70px" data-fill-color="transparent">
-														130, 187, 250, 257, 200, 210, 300, 270, 363, 247, 270,
-														363, 247</div>
-												</div>
-												<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-													<div class="easy-pie-chart txt-color-greenLight"
-														data-percent="78.9" data-pie-size="50">
-														<span class="percent percent-sign">78.9 </span>
-													</div>
-													<span class="easy-pie-title"> Disk Space <i
-														class="fa fa-caret-down icon-color-good"></i></span>
-													<ul class="smaller-stat hidden-sm pull-right">
-														<li><span class="label bg-color-blueDark"><i
-																class="fa fa-caret-up"></i> 76%</span></li>
-														<li><span class="label bg-color-blue"><i
-																class="fa fa-caret-down"></i> 3%</span></li>
-													</ul>
-													<div
-														class="sparkline txt-color-blue hidden-sm hidden-md pull-right"
-														data-sparkline-type="line" data-sparkline-height="33px"
-														data-sparkline-width="70px" data-fill-color="transparent">
-														257, 200, 210, 300, 270, 363, 130, 187, 250, 247, 270,
-														363, 247</div>
-												</div>
-												<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-													<div class="easy-pie-chart txt-color-blue"
-														data-percent="23" data-pie-size="50">
-														<span class="percent percent-sign">23 </span>
-													</div>
-													<span class="easy-pie-title"> Transfered <i
-														class="fa fa-caret-up icon-color-good"></i></span>
-													<ul class="smaller-stat hidden-sm pull-right">
-														<li><span class="label bg-color-darken">10GB</span></li>
-														<li><span class="label bg-color-blueDark"><i
-																class="fa fa-caret-up"></i> 10%</span></li>
-													</ul>
-													<div
-														class="sparkline txt-color-darken hidden-sm hidden-md pull-right"
-														data-sparkline-type="line" data-sparkline-height="33px"
-														data-sparkline-width="70px" data-fill-color="transparent">
-														200, 210, 363, 247, 300, 270, 130, 187, 250, 257, 363,
-														247, 270</div>
-												</div>
-												<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-													<div class="easy-pie-chart txt-color-darken"
-														data-percent="36" data-pie-size="50">
-														<span class="percent degree-sign">36 <i
-															class="fa fa-caret-up"></i></span>
-													</div>
-													<span class="easy-pie-title"> Temperature <i
-														class="fa fa-caret-down icon-color-good"></i></span>
-													<ul class="smaller-stat hidden-sm pull-right">
-														<li><span class="label bg-color-red"><i
-																class="fa fa-caret-up"></i> 124</span></li>
-														<li><span class="label bg-color-blue"><i
-																class="fa fa-caret-down"></i> 40 F</span></li>
-													</ul>
-													<div
-														class="sparkline txt-color-red hidden-sm hidden-md pull-right"
-														data-sparkline-type="line" data-sparkline-height="33px"
-														data-sparkline-width="70px" data-fill-color="transparent">
-														2700, 3631, 2471, 2700, 3631, 2471, 1300, 1877, 2500,
-														2577, 2000, 2100, 3000</div>
-												</div>
-											</div>
-
-										</div>
-										<!-- end s1 tab pane -->
-
-										<div class="tab-pane fade" id="s2">
-											<div class="widget-body-toolbar bg-color-white">
-
-												<form class="form-inline" role="form">
-
-													<div class="form-group">
-														<label class="sr-only" for="s123">Show From</label> <input
-															type="email" class="form-control input-sm" id="s123"
-															placeholder="Show From">
-													</div>
-													<div class="form-group">
-														<input type="email" class="form-control input-sm"
-															id="s124" placeholder="To">
-													</div>
-
-													<div class="btn-group hidden-phone pull-right">
-														<a class="btn dropdown-toggle btn-xs btn-default"
-															data-toggle="dropdown"><i class="fa fa-cog"></i> More
-															<span class="caret"> </span> </a>
-														<ul class="dropdown-menu pull-right">
-															<li><a href="javascript:void(0);"><i
-																	class="fa fa-file-text-alt"></i> Export to PDF</a></li>
-															<li><a href="javascript:void(0);"><i
-																	class="fa fa-question-sign"></i> Help</a></li>
-														</ul>
-													</div>
-
-												</form>
-
-											</div>
-											<div class="padding-10">
-												<div id="statsChart" class="chart-large has-legend-unique"></div>
-											</div>
-
-										</div>
-										<!-- end s2 tab pane -->
-
-										<div class="tab-pane fade" id="s3">
-
-											<div class="widget-body-toolbar bg-color-white smart-form"
-												id="rev-toggles">
-
-												<div class="inline-group">
-
-													<label for="gra-0" class="checkbox"> <input
-														type="checkbox" name="gra-0" id="gra-0" checked="checked">
-														<i></i> Target
-													</label> <label for="gra-1" class="checkbox"> <input
-														type="checkbox" name="gra-1" id="gra-1" checked="checked">
-														<i></i> Actual
-													</label> <label for="gra-2" class="checkbox"> <input
-														type="checkbox" name="gra-2" id="gra-2" checked="checked">
-														<i></i> Signups
-													</label>
-												</div>
-
-												<div class="btn-group hidden-phone pull-right">
-													<a class="btn dropdown-toggle btn-xs btn-default"
-														data-toggle="dropdown"><i class="fa fa-cog"></i> More
-														<span class="caret"> </span> </a>
-													<ul class="dropdown-menu pull-right">
-														<li><a href="javascript:void(0);"><i
-																class="fa fa-file-text-alt"></i> Export to PDF</a></li>
-														<li><a href="javascript:void(0);"><i
-																class="fa fa-question-sign"></i> Help</a></li>
-													</ul>
-												</div>
-
-											</div>
-
-											<div class="padding-10">
-												<div id="flotcontainer"
-													class="chart-large has-legend-unique"></div>
-											</div>
-										</div>
-										<!-- end s3 tab pane -->
-									</div>
-
-									<!-- end content -->
-								</div>
-
+							<div class="logo">
+								<h3 class="semi-bold"
+									style="text-shadow: 1px 1px 1px #efe17c; margin: 7px 0px; font-size: 17px;">
+									Leadership Dashboard<br>-
+								</h3>
 							</div>
-							<!-- end widget div -->
 						</div>
-						<!-- end widget -->
-
-					</article>
+					</div>
 				</div>
-
-				<!-- end row -->
-
-				<!-- row -->
-
-
-				<!-- end row -->
-
-			</section>
-			<section id="widget-grid" class="">
-
-				<!-- row -->
-				<div class="row">
-					<article class="col-sm-12">
-						<!-- new widget -->
-						<div class="jarviswidget" id="wid-id-0"
-							data-widget-togglebutton="false" data-widget-editbutton="false"
-							data-widget-fullscreenbutton="false"
-							data-widget-colorbutton="false" data-widget-deletebutton="false">
-							<!-- widget options:
-								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-
-								data-widget-colorbutton="false"
-								data-widget-editbutton="false"
-								data-widget-togglebutton="false"
-								data-widget-deletebutton="false"
-								data-widget-fullscreenbutton="false"
-								data-widget-custombutton="false"
-								data-widget-collapsed="true"
-								data-widget-sortable="false"
-
-								-->
-							<header>
-								<span class="widget-icon"> <i
-									class="glyphicon glyphicon-stats txt-color-darken"></i>
-								</span>
-								<h2>Live Feeds</h2>
-
-								<ul class="nav nav-tabs pull-right in" id="myTab">
-									<li class="active"><a data-toggle="tab" href="#s1"><i
-											class="fa fa-clock-o"></i> <span
-											class="hidden-mobile hidden-tablet">Live Stats</span></a></li>
-
-									<li><a data-toggle="tab" href="#s2"><i
-											class="fa fa-facebook"></i> <span
-											class="hidden-mobile hidden-tablet">Social Network</span></a></li>
-
-									<li><a data-toggle="tab" href="#s3"><i
-											class="fa fa-dollar"></i> <span
-											class="hidden-mobile hidden-tablet">Revenue</span></a></li>
-								</ul>
-
-							</header>
-
-							<!-- widget div-->
-							<div class="no-padding">
-								<!-- widget edit box -->
-								<div class="jarviswidget-editbox">test</div>
-								<!-- end widget edit box -->
-
-								<div class="widget-body">
-									<!-- content -->
-									<div id="myTabContent" class="tab-content">
-										<div
-											class="tab-pane fade active in padding-10 no-padding-bottom"
-											id="s1">
-											<div class="row no-space">
-												<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-													<span class="demo-liveupdate-1"> <span
-														class="onoffswitch-title">Live switch</span> <span
-														class="onoffswitch"> <input type="checkbox"
-															name="start_interval" class="onoffswitch-checkbox"
-															id="start_interval"> <label
-															class="onoffswitch-label" for="start_interval"> <span
-																class="onoffswitch-inner" data-swchon-text="ON"
-																data-swchoff-text="OFF"></span> <span
-																class="onoffswitch-switch"></span>
-														</label>
-													</span>
-													</span>
-													<div id="updating-chart" class="chart-large txt-color-blue"></div>
-
-												</div>
-												<div
-													class="col-xs-12 col-sm-12 col-md-4 col-lg-4 show-stats">
-
-													<div class="row">
-														<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
-															<span class="text"> My Tasks <span
-																class="pull-right">130/200</span>
-															</span>
-															<div class="progress">
-																<div class="progress-bar bg-color-blueDark"
-																	style="width: 65%;"></div>
-															</div>
-														</div>
-														<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
-															<span class="text"> Transfered <span
-																class="pull-right">440 GB</span>
-															</span>
-															<div class="progress">
-																<div class="progress-bar bg-color-blue"
-																	style="width: 34%;"></div>
-															</div>
-														</div>
-														<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
-															<span class="text"> Bugs Squashed<span
-																class="pull-right">77%</span>
-															</span>
-															<div class="progress">
-																<div class="progress-bar bg-color-blue"
-																	style="width: 77%;"></div>
-															</div>
-														</div>
-														<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
-															<span class="text"> User Testing <span
-																class="pull-right">7 Days</span>
-															</span>
-															<div class="progress">
-																<div class="progress-bar bg-color-greenLight"
-																	style="width: 84%;"></div>
-															</div>
-														</div>
-
-														<span class="show-stat-buttons"> <span
-															class="col-xs-12 col-sm-6 col-md-6 col-lg-6"> <a
-																href="javascript:void(0);"
-																class="btn btn-default btn-block hidden-xs">Generate
-																	PDF</a>
-														</span> <span class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-																<a href="javascript:void(0);"
-																class="btn btn-default btn-block hidden-xs">Report a
-																	bug</a>
-														</span>
-														</span>
-
-													</div>
-
-												</div>
-											</div>
-
-											<div class="show-stat-microcharts">
-												<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-
-													<div class="easy-pie-chart txt-color-orangeDark"
-														data-percent="33" data-pie-size="50">
-														<span class="percent percent-sign">35</span>
-													</div>
-													<span class="easy-pie-title"> Server Load <i
-														class="fa fa-caret-up icon-color-bad"></i>
-													</span>
-													<ul class="smaller-stat hidden-sm pull-right">
-														<li><span class="label bg-color-greenLight"><i
-																class="fa fa-caret-up"></i> 97%</span></li>
-														<li><span class="label bg-color-blueLight"><i
-																class="fa fa-caret-down"></i> 44%</span></li>
-													</ul>
-													<div
-														class="sparkline txt-color-greenLight hidden-sm hidden-md pull-right"
-														data-sparkline-type="line" data-sparkline-height="33px"
-														data-sparkline-width="70px" data-fill-color="transparent">
-														130, 187, 250, 257, 200, 210, 300, 270, 363, 247, 270,
-														363, 247</div>
-												</div>
-												<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-													<div class="easy-pie-chart txt-color-greenLight"
-														data-percent="78.9" data-pie-size="50">
-														<span class="percent percent-sign">78.9 </span>
-													</div>
-													<span class="easy-pie-title"> Disk Space <i
-														class="fa fa-caret-down icon-color-good"></i></span>
-													<ul class="smaller-stat hidden-sm pull-right">
-														<li><span class="label bg-color-blueDark"><i
-																class="fa fa-caret-up"></i> 76%</span></li>
-														<li><span class="label bg-color-blue"><i
-																class="fa fa-caret-down"></i> 3%</span></li>
-													</ul>
-													<div
-														class="sparkline txt-color-blue hidden-sm hidden-md pull-right"
-														data-sparkline-type="line" data-sparkline-height="33px"
-														data-sparkline-width="70px" data-fill-color="transparent">
-														257, 200, 210, 300, 270, 363, 130, 187, 250, 247, 270,
-														363, 247</div>
-												</div>
-												<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-													<div class="easy-pie-chart txt-color-blue"
-														data-percent="23" data-pie-size="50">
-														<span class="percent percent-sign">23 </span>
-													</div>
-													<span class="easy-pie-title"> Transfered <i
-														class="fa fa-caret-up icon-color-good"></i></span>
-													<ul class="smaller-stat hidden-sm pull-right">
-														<li><span class="label bg-color-darken">10GB</span></li>
-														<li><span class="label bg-color-blueDark"><i
-																class="fa fa-caret-up"></i> 10%</span></li>
-													</ul>
-													<div
-														class="sparkline txt-color-darken hidden-sm hidden-md pull-right"
-														data-sparkline-type="line" data-sparkline-height="33px"
-														data-sparkline-width="70px" data-fill-color="transparent">
-														200, 210, 363, 247, 300, 270, 130, 187, 250, 257, 363,
-														247, 270</div>
-												</div>
-												<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-													<div class="easy-pie-chart txt-color-darken"
-														data-percent="36" data-pie-size="50">
-														<span class="percent degree-sign">36 <i
-															class="fa fa-caret-up"></i></span>
-													</div>
-													<span class="easy-pie-title"> Temperature <i
-														class="fa fa-caret-down icon-color-good"></i></span>
-													<ul class="smaller-stat hidden-sm pull-right">
-														<li><span class="label bg-color-red"><i
-																class="fa fa-caret-up"></i> 124</span></li>
-														<li><span class="label bg-color-blue"><i
-																class="fa fa-caret-down"></i> 40 F</span></li>
-													</ul>
-													<div
-														class="sparkline txt-color-red hidden-sm hidden-md pull-right"
-														data-sparkline-type="line" data-sparkline-height="33px"
-														data-sparkline-width="70px" data-fill-color="transparent">
-														2700, 3631, 2471, 2700, 3631, 2471, 1300, 1877, 2500,
-														2577, 2000, 2100, 3000</div>
-												</div>
-											</div>
-
-										</div>
-										<!-- end s1 tab pane -->
-
-										<div class="tab-pane fade" id="s2">
-											<div class="widget-body-toolbar bg-color-white">
-
-												<form class="form-inline" role="form">
-
-													<div class="form-group">
-														<label class="sr-only" for="s123">Show From</label> <input
-															type="email" class="form-control input-sm" id="s123"
-															placeholder="Show From">
-													</div>
-													<div class="form-group">
-														<input type="email" class="form-control input-sm"
-															id="s124" placeholder="To">
-													</div>
-
-													<div class="btn-group hidden-phone pull-right">
-														<a class="btn dropdown-toggle btn-xs btn-default"
-															data-toggle="dropdown"><i class="fa fa-cog"></i> More
-															<span class="caret"> </span> </a>
-														<ul class="dropdown-menu pull-right">
-															<li><a href="javascript:void(0);"><i
-																	class="fa fa-file-text-alt"></i> Export to PDF</a></li>
-															<li><a href="javascript:void(0);"><i
-																	class="fa fa-question-sign"></i> Help</a></li>
-														</ul>
-													</div>
-
-												</form>
-
-											</div>
-											<div class="padding-10">
-												<div id="statsChart" class="chart-large has-legend-unique"></div>
-											</div>
-
-										</div>
-										<!-- end s2 tab pane -->
-
-										<div class="tab-pane fade" id="s3">
-
-											<div class="widget-body-toolbar bg-color-white smart-form"
-												id="rev-toggles">
-
-												<div class="inline-group">
-
-													<label for="gra-0" class="checkbox"> <input
-														type="checkbox" name="gra-0" id="gra-0" checked="checked">
-														<i></i> Target
-													</label> <label for="gra-1" class="checkbox"> <input
-														type="checkbox" name="gra-1" id="gra-1" checked="checked">
-														<i></i> Actual
-													</label> <label for="gra-2" class="checkbox"> <input
-														type="checkbox" name="gra-2" id="gra-2" checked="checked">
-														<i></i> Signups
-													</label>
-												</div>
-
-												<div class="btn-group hidden-phone pull-right">
-													<a class="btn dropdown-toggle btn-xs btn-default"
-														data-toggle="dropdown"><i class="fa fa-cog"></i> More
-														<span class="caret"> </span> </a>
-													<ul class="dropdown-menu pull-right">
-														<li><a href="javascript:void(0);"><i
-																class="fa fa-file-text-alt"></i> Export to PDF</a></li>
-														<li><a href="javascript:void(0);"><i
-																class="fa fa-question-sign"></i> Help</a></li>
-													</ul>
-												</div>
-
-											</div>
-
-											<div class="padding-10">
-												<div id="flotcontainer"
-													class="chart-large has-legend-unique"></div>
-											</div>
-										</div>
-										<!-- end s3 tab pane -->
-									</div>
-
-									<!-- end content -->
-								</div>
-
+				<div class="col-xs-3" style="margin-bottom: 12px;">
+					<div class=" col-md-12 grids">
+						<div class="lockscreen animated flipInY">
+							<div style="padding-top: 13px;">
+								<i class="fa fa-key"
+									style="font-size: 88px; color: #7f7878; text-shadow: 2px 2px 2px #171515;"></i>
 							</div>
-							<!-- end widget div -->
+							<div class="logo">
+								<h3 class="semi-bold"
+									style="text-shadow: 1px 1px 1px #efe17c; margin: 7px 0px; font-size: 17px;">
+									Compliance Scorecard<br>Overall - India Center
+								</h3>
+							</div>
 						</div>
-						<!-- end widget -->
-
-					</article>
+					</div>
 				</div>
-
-				<!-- end row -->
-
-				<!-- row -->
-
-
-				<!-- end row -->
-
-			</section>
-			<!-- end widget grid -->
-
-
-		</div>
-		<!-- END MAIN CONTENT -->
-
-	</div>
-	<!-- END MAIN PANEL -->
-
-	<!-- PAGE FOOTER -->
-	<div class="page-footer">
-		<div class="row">
-			<div class="col-xs-12 col-sm-6">
-				<span class="txt-color-white">SmartAdmin 1.5 <span
-					class="hidden-xs"> - Web Application Framework</span> © 2014-2015
-				</span>
-			</div>
-
-			<div class="col-xs-6 col-sm-6 text-right hidden-xs">
-				<div class="txt-color-white inline-block">
-					<i class="txt-color-blueLight hidden-mobile">Last account
-						activity <i class="fa fa-clock-o"></i> <strong>52 mins
-							ago &nbsp;</strong>
-					</i>
-					<div class="btn-group dropup">
-						<button
-							class="btn btn-xs dropdown-toggle bg-color-blue txt-color-white"
-							data-toggle="dropdown">
-							<i class="fa fa-link"></i> <span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu pull-right text-left">
-							<li>
-								<div class="padding-5">
-									<p class="txt-color-darken font-sm no-margin">Download
-										Progress</p>
-									<div class="progress progress-micro no-margin">
-										<div class="progress-bar progress-bar-success"
-											style="width: 50%;"></div>
-									</div>
-								</div>
-							</li>
-							<li class="divider"></li>
-							<li>
-								<div class="padding-5">
-									<p class="txt-color-darken font-sm no-margin">Server Load</p>
-									<div class="progress progress-micro no-margin">
-										<div class="progress-bar progress-bar-success"
-											style="width: 20%;"></div>
-									</div>
-								</div>
-							</li>
-							<li class="divider"></li>
-							<li>
-								<div class="padding-5">
-									<p class="txt-color-darken font-sm no-margin">
-										Memory Load <span class="text-danger">*critical*</span>
-									</p>
-									<div class="progress progress-micro no-margin">
-										<div class="progress-bar progress-bar-danger"
-											style="width: 70%;"></div>
-									</div>
-								</div>
-							</li>
-							<li class="divider"></li>
-							<li>
-								<div class="padding-5">
-									<button class="btn btn-block btn-default">refresh</button>
-								</div>
-							</li>
-						</ul>
+				<div class="col-xs-3" style="margin-bottom: 12px;">
+					<div class=" col-md-12 grids">
+						<div class="lockscreen animated flipInY">
+							<div style="padding-top: 13px;">
+								<i class="fa fa-key"
+									style="font-size: 88px; color: #7f7878; text-shadow: 2px 2px 2px #171515;"></i>
+							</div>
+							<div class="logo">
+								<h3 class="semi-bold"
+									style="text-shadow: 1px 1px 1px #efe17c; margin: 7px 0px; font-size: 17px;">
+									Compliance Scorecard<br>By SDL
+								</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-3" style="margin-bottom: 12px;">
+					<div class=" col-md-12 grids">
+						<div class="lockscreen animated flipInY">
+							<div style="padding-top: 13px;">
+								<i class="fa fa-key"
+									style="font-size: 88px; color: #7f7878; text-shadow: 2px 2px 2px #171515;"></i>
+							</div>
+							<div class="logo">
+								<h3 class="semi-bold"
+									style="text-shadow: 1px 1px 1px #efe17c; margin: 7px 0px; font-size: 17px;">
+									Compliance Scorecard<br>By Location
+								</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-3" style="margin-bottom: 12px;">
+					<div class=" col-md-12 grids">
+						<div class="lockscreen animated flipInY">
+							<div style="padding-top: 13px;">
+								<i class="fa fa-key"
+									style="font-size: 88px; color: #7f7878; text-shadow: 2px 2px 2px #171515;"></i>
+							</div>
+							<div class="logo">
+								<h3 class="semi-bold"
+									style="text-shadow: 1px 1px 1px #efe17c; margin: 7px 0px; font-size: 17px;">
+									Compliance Scorecard<br>By CP
+								</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-3" style="margin-bottom: 12px;">
+					<div class=" col-md-12 grids">
+						<div class="lockscreen animated flipInY">
+							<div style="padding-top: 13px;">
+								<i class="fa fa-key"
+									style="font-size: 88px; color: #7f7878; text-shadow: 2px 2px 2px #171515;"></i>
+							</div>
+							<div class="logo">
+								<h3 class="semi-bold"
+									style="text-shadow: 1px 1px 1px #efe17c; margin: 7px 0px; font-size: 17px;">
+									Compliance Scorecard<br>By Account
+								</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-3" style="margin-bottom: 12px;">
+					<div class=" col-md-12 grids">
+						<div class="lockscreen animated flipInY">
+							<div style="padding-top: 13px;">
+								<i class="fa fa-key"
+									style="font-size: 88px; color: #7f7878; text-shadow: 2px 2px 2px #171515;"></i>
+							</div>
+							<div class="logo">
+								<h3 class="semi-bold"
+									style="text-shadow: 1px 1px 1px #efe17c; margin: 7px 0px; font-size: 17px;">
+									Compliance Scorecard<br>Applicability Database
+								</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-3" style="margin-bottom: 12px;">
+					<div class=" col-md-12 grids">
+						<div class="lockscreen animated flipInY">
+							<div style="padding-top: 13px;">
+								<i class="fa fa-key"
+									style="font-size: 88px; color: #7f7878; text-shadow: 2px 2px 2px #171515;"></i>
+							</div>
+							<div class="logo">
+								<h3 class="semi-bold"
+									style="text-shadow: 1px 1px 1px #efe17c; margin: 7px 0px; font-size: 17px;">
+									Compliance Scorecard<br>Form By Account(Detailed)
+								</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-3" style="margin-bottom: 12px;">
+					<div class=" col-md-12 grids">
+						<div class="lockscreen animated flipInY">
+							<div style="padding-top: 13px;">
+								<i class="fa fa-key"
+									style="font-size: 88px; color: #7f7878; text-shadow: 2px 2px 2px #171515;"></i>
+							</div>
+							<div class="logo">
+								<h3 class="semi-bold"
+									style="text-shadow: 1px 1px 1px #efe17c; margin: 7px 0px; font-size: 17px;">
+									User Access<br>Management
+								</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-3" style="margin-bottom: 12px;">
+					<div class=" col-md-12 grids">
+						<div class="lockscreen animated flipInY">
+							<div style="padding-top: 13px;">
+								<i class="fa fa-key"
+									style="font-size: 88px; color: #7f7878; text-shadow: 2px 2px 2px #171515;"></i>
+							</div>
+							<div class="logo">
+								<h3 class="semi-bold"
+									style="text-shadow: 1px 1px 1px #efe17c; margin: 7px 0px; font-size: 17px;">
+									Compliance Partner<br>Alignment Database
+								</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-3" style="margin-bottom: 12px;">
+					<div class=" col-md-12 grids">
+						<div class="lockscreen animated flipInY">
+							<div style="padding-top: 13px;">
+								<i class="fa fa-key"
+									style="font-size: 88px; color: #7f7878; text-shadow: 2px 2px 2px #171515;"></i>
+							</div>
+							<div class="logo">
+								<h3 class="semi-bold"
+									style="text-shadow: 1px 1px 1px #efe17c; margin: 7px 0px; font-size: 17px;">
+									Escalation Matrix Database<br>for each account
+								</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-3" style="margin-bottom: 12px;">
+					<div class=" col-md-12 grids">
+						<div class="lockscreen animated flipInY">
+							<div style="padding-top: 13px;">
+								<i class="fa fa-key"
+									style="font-size: 88px; color: #7f7878; text-shadow: 2px 2px 2px #171515;"></i>
+							</div>
+							<div class="logo">
+								<h3 class="semi-bold"
+									style="text-shadow: 1px 1px 1px #efe17c; margin: 7px 0px; font-size: 17px;">
+									Compliance Scorecard Parameters<br> & Other Reports
+								</h3>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div id="shortcut">
-		<ul>
-			<li><a href="inbox.html"
-				class="jarvismetro-tile big-cubes bg-color-blue"> <span
-					class="iconbox"> <i class="fa fa-envelope fa-4x"></i> <span>Mail
-							<span class="label pull-right bg-color-darken">14</span>
-					</span>
-				</span>
-			</a></li>
-			<li><a href="calendar.html"
-				class="jarvismetro-tile big-cubes bg-color-orangeDark"> <span
-					class="iconbox"> <i class="fa fa-calendar fa-4x"></i> <span>Calendar</span>
-				</span>
-			</a></li>
-			<li><a href="gmap-xml.html"
-				class="jarvismetro-tile big-cubes bg-color-purple"> <span
-					class="iconbox"> <i class="fa fa-map-marker fa-4x"></i> <span>Maps</span>
-				</span>
-			</a></li>
-			<li><a href="invoice.html"
-				class="jarvismetro-tile big-cubes bg-color-blueDark"> <span
-					class="iconbox"> <i class="fa fa-book fa-4x"></i> <span>Invoice
-							<span class="label pull-right bg-color-darken">99</span>
-					</span>
-				</span>
-			</a></li>
-			<li><a href="gallery.html"
-				class="jarvismetro-tile big-cubes bg-color-greenLight"> <span
-					class="iconbox"> <i class="fa fa-picture-o fa-4x"></i> <span>Gallery
-					</span>
-				</span>
-			</a></li>
-			<li><a href="profile.html"
-				class="jarvismetro-tile big-cubes selected bg-color-pinkDark"> <span
-					class="iconbox"> <i class="fa fa-user fa-4x"></i> <span>My
-							Profile </span>
-				</span>
-			</a></li>
-		</ul>
+	<div class="page-footer">
+		<div class="row">
+			<div class="col-xs-12 col-sm-6">
+				<span class="txt-color-white">Compliance Dashboard <span
+					class="hidden-xs"> - Web Application </span></span>
+			</div>
+
+		</div>
 	</div>
+
 	<script data-pace-options='{ "restartOnRequestAfter": true }'
 		src="${contextPath}/resources/js/plugin/pace/pace.min.js"></script>
 	<script
@@ -1606,7 +486,6 @@
 		src="${contextPath}/resources/js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
 	<script
 		src="${contextPath}/resources/js/plugin/fastclick/fastclick.min.js"></script>
-	<script src="${contextPath}/resources/js/demo.min.js"></script>
 	<script src="${contextPath}/resources/js/app.min.js"></script>
 	<script src="${contextPath}/resources/js/speech/voicecommand.min.js"></script>
 	<script
